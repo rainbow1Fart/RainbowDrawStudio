@@ -33,5 +33,7 @@ namespace RDS_Model
         /// 权限
         /// </summary>
         public int Power { get; set; }
+
+        public int Test { get; set; }
     }
 }
