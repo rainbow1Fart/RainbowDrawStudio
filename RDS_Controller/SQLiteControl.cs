@@ -23,10 +23,13 @@ namespace RDS_Controller
         /// <summary>
         /// 创建一个连接到指定数据库
         /// </summary>
-        public static void ConnectToDatabase(string dataPath)
+        public static bool ConnectToDatabase(string dataPath)
         {
             m_dbConnection = new SQLiteConnection("Data Source="+ dataPath);
+            if (m_dbConnection == null)
+                return false;
             m_dbConnection.Open();
+            return true;
         }
 
         /// <summary>
