@@ -7,7 +7,7 @@ namespace RDS_Model
 {
     public class AccountInfo
     {
-        private AccountInfo()
+        public AccountInfo()
         {
 
         }
@@ -61,6 +61,8 @@ namespace RDS_Model
         public int Power { get; set; }
 
 
+
+
         /// <summary>
         /// 账号检查
         /// </summary>
@@ -88,7 +90,7 @@ namespace RDS_Model
         /// </summary>
         /// <param name="Account"></param>
         /// <returns></returns>
-        public static bool AccountFullChecked(string Account,string Password)
+        public static bool AccountFullChecked(string Account, string Password)
         {
             string sql = string.Format("select * from UsersTable where Account='{0}' and Password='{1}'", Account, Password);
             using (SQLiteDataReader reader = SQLiteControl.ExecuteReader(sql))
@@ -135,7 +137,21 @@ namespace RDS_Model
                     Power = string.IsNullOrEmpty(reader["Power"].ToString()) ? 0 : Int32.Parse(reader["Power"].ToString()),
                 });
             }
+
+            reader.Close();
             return _accounts;
+        }
+
+        public static bool RegisterAccount(AccountInfo account)
+        {
+            string sql =
+                string.Format(
+                    "insert into UsersTable values(NULL, '{0}', '{1}', '{2}', '{3}', {4})",
+                    account.Person, account.Account, account.Password, account.Key, account.Power);
+            int result = SQLiteControl.ExecuteNonQuery(sql);
+            if (result != 1)
+                return false;
+            return true;
         }
     }
 

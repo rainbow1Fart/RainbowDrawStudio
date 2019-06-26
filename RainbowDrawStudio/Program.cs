@@ -11,13 +11,17 @@ namespace RainbowDrawStudio
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
+        public static ApplicationContext ApplicationContext;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
-            Application.Run(new MainForm.MainForm());
+            LoginForm form = new LoginForm();
+            form.Show();
+            ApplicationContext = new ApplicationContext();
+            ApplicationContext.MainForm = form;
+            Application.Run(ApplicationContext);
         }
     }
 }

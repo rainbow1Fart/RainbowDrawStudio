@@ -75,6 +75,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogsHelper.cs" />
+    <Compile Include="ThreadDelegate.cs" />
     <Compile Include="SQLiteControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

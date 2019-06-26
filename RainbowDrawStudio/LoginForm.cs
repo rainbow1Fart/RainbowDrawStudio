@@ -72,7 +72,10 @@ namespace RainbowDrawStudio
 
                 if (Login(account_textEdit.Text.Trim(), password_textEdit.Text.Trim()))
                 {
+                    MainForm.MainForm form = new MainForm.MainForm();
+                    Program.ApplicationContext.MainForm = form;
                     this.Close();
+                    form.Show();
                 }
             }
         }
@@ -84,7 +87,9 @@ namespace RainbowDrawStudio
         /// <param name="e"></param>
         private void register_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            RegisterForm form = new RegisterForm();
+            form.Text = "注册账号";
+            form.Show();
         }
 
         /// <summary>
@@ -120,7 +125,10 @@ namespace RainbowDrawStudio
 
             if (Login(account_textEdit.Text.Trim(), password_textEdit.Text.Trim()))
             {
+                MainForm.MainForm form = new MainForm.MainForm();
+                Program.ApplicationContext.MainForm = form;
                 this.Close();
+                form.Show();
             }
         }
 

@@ -55,8 +55,9 @@ namespace RDS_Controller
                     return command.ExecuteNonQuery();
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
+                LogsHelper.WriteLog("ExecuteNonQuery()", LogsEnum.Error, ex);
                 return -1;
             }
         }
@@ -77,6 +78,7 @@ namespace RDS_Controller
             }
             catch (System.Exception ex)
             {
+                LogsHelper.WriteLog("ExecuteNonQuery()", LogsEnum.Error, ex);
                 return null;
             }
         }
