@@ -126,6 +126,7 @@
             this.person_textEdit.Name = "person_textEdit";
             this.person_textEdit.Size = new System.Drawing.Size(150, 20);
             this.person_textEdit.TabIndex = 1;
+            this.person_textEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.person_textEdit_KeyPress);
             // 
             // password_textEdit
             // 
@@ -134,6 +135,7 @@
             this.password_textEdit.Properties.PasswordChar = '*';
             this.password_textEdit.Size = new System.Drawing.Size(150, 20);
             this.password_textEdit.TabIndex = 3;
+            this.password_textEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.person_textEdit_KeyPress);
             this.password_textEdit.Leave += new System.EventHandler(this.password_textEdit_Leave);
             this.password_textEdit.MouseEnter += new System.EventHandler(this.password_textEdit_MouseEnter);
             this.password_textEdit.MouseLeave += new System.EventHandler(this.password_textEdit_MouseLeave);
@@ -145,6 +147,7 @@
             this.pwdAgain_textEdit.Properties.PasswordChar = '*';
             this.pwdAgain_textEdit.Size = new System.Drawing.Size(150, 20);
             this.pwdAgain_textEdit.TabIndex = 4;
+            this.pwdAgain_textEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.person_textEdit_KeyPress);
             this.pwdAgain_textEdit.Leave += new System.EventHandler(this.pwdAgain_textEdit_Leave);
             this.pwdAgain_textEdit.MouseEnter += new System.EventHandler(this.password_textEdit_MouseEnter);
             this.pwdAgain_textEdit.MouseLeave += new System.EventHandler(this.password_textEdit_MouseLeave);
@@ -156,6 +159,7 @@
             this.key_textEdit.Properties.PasswordChar = '*';
             this.key_textEdit.Size = new System.Drawing.Size(150, 20);
             this.key_textEdit.TabIndex = 5;
+            this.key_textEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.person_textEdit_KeyPress);
             this.key_textEdit.Leave += new System.EventHandler(this.key_textEdit_Leave);
             this.key_textEdit.MouseEnter += new System.EventHandler(this.key_textEdit_MouseEnter);
             this.key_textEdit.MouseLeave += new System.EventHandler(this.key_textEdit_MouseLeave);
@@ -167,6 +171,7 @@
             this.keyAgain_textEdit.Properties.PasswordChar = '*';
             this.keyAgain_textEdit.Size = new System.Drawing.Size(150, 20);
             this.keyAgain_textEdit.TabIndex = 6;
+            this.keyAgain_textEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.person_textEdit_KeyPress);
             this.keyAgain_textEdit.Leave += new System.EventHandler(this.keyAgain_textEdit_Leave);
             this.keyAgain_textEdit.MouseEnter += new System.EventHandler(this.key_textEdit_MouseEnter);
             this.keyAgain_textEdit.MouseLeave += new System.EventHandler(this.key_textEdit_MouseLeave);
@@ -188,6 +193,7 @@
             this.account_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.account_textEdit.Size = new System.Drawing.Size(150, 20);
             this.account_textEdit.TabIndex = 2;
+            this.account_textEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.person_textEdit_KeyPress);
             this.account_textEdit.Leave += new System.EventHandler(this.account_textEdit_Leave);
             // 
             // labelControl7

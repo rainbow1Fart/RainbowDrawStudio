@@ -41,7 +41,7 @@ namespace RainbowDrawStudio
             if (AccountInfo.RegisterAccount(account))
             {
                 XtraMessageBox.Show(
-                    "注册成功！请牢记一下信息：\r\n" + string.Format("账号：{0}\r\n密码：{1}\r\n安全码：{2}\r\n", account.Account,
+                    "注册成功！请牢记以下信息：\r\n" + string.Format("账号：{0}\r\n密码：{1}\r\n安全码：{2}\r\n", account.Account,
                         Encryption.DecryptBase64(account.Password), Encryption.DecryptBase64(account.Key)), "消息",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
@@ -151,7 +151,7 @@ namespace RainbowDrawStudio
 
         private void key_textEdit_Leave(object sender, EventArgs e)
         {
-            if (key_textEdit.Text.Length < 6)
+            if (key_textEdit.Text.Length < 6&&!string.IsNullOrEmpty(key_textEdit.Text.Trim()))
             {
                 labelControl11.ForeColor = Color.Red;
                 labelControl11.Text = "安全码长度小于6位数";
@@ -165,7 +165,7 @@ namespace RainbowDrawStudio
 
         private void keyAgain_textEdit_Leave(object sender, EventArgs e)
         {
-            if (keyAgain_textEdit.Text.Length < 6)
+            if (keyAgain_textEdit.Text.Length < 6 && !string.IsNullOrEmpty(key_textEdit.Text.Trim()))
             {
                 labelControl12.ForeColor = Color.Red;
                 labelControl12.Text = "安全码长度小于6位数";
@@ -212,6 +212,36 @@ namespace RainbowDrawStudio
             {
                 labelControl8.ForeColor = System.Drawing.SystemColors.ControlDark;
                 labelControl8.Text = "请输入您的用户名";
+            }
+        }
+
+        private void person_textEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 13)
+                return;
+            if (!FullCheck())
+            {
+                return;
+            }
+
+            AccountInfo account = new AccountInfo();
+            account.Account = account_textEdit.Text.Trim();
+            account.Person = person_textEdit.Text.Trim();
+            account.Password = Encryption.EncryptBase64(password_textEdit.Text.Trim());
+            account.Key = Encryption.EncryptBase64(key_textEdit.Text.Trim());
+            if (AccountInfo.RegisterAccount(account))
+            {
+                XtraMessageBox.Show(
+                    "注册成功！请牢记以下信息：\r\n" + string.Format("账号：{0}\r\n密码：{1}\r\n安全码：{2}\r\n", account.Account,
+                        Encryption.DecryptBase64(account.Password), Encryption.DecryptBase64(account.Key)), "消息",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                return;
+            }
+            else
+            {
+                XtraMessageBox.Show("注册失败！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
     }

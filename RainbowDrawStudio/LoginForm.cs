@@ -11,6 +11,10 @@ using DevExpress.XtraEditors;
 using RainbowDrawStudio.Public;
 using RDS_Controller;
 using RDS_Model;
+using System.IO;
+using System.Xml.Linq;
+using DevExpress.CodeParser.VB;
+using System.Xml;
 
 namespace RainbowDrawStudio
 {
@@ -27,8 +31,22 @@ namespace RainbowDrawStudio
                 XtraMessageBox.Show(args);
                 Application.Exit();
             }
-
             account_textEdit.Focus();
+            //每次登录前Copy一份DB
+            FileInfo file = new FileInfo(@"./DataBase/database.sqlite");
+            if (!File.Exists(@"./DataBase/" + DateTime.Today.ToString("yyyy-MM-dd") + ".sqlite"))
+            {
+                file = file.CopyTo(@"./DataBase/" + DateTime.Today.ToString("yyyy-MM-dd") + ".sqlite");
+                file.Encrypt();
+            }
+            //解密文件
+            //else
+            //{
+            //    file = new FileInfo(@"./DataBase/" + DateTime.Today.ToString("yyyy-MM-dd") + ".sqlite");
+            //    file.Decrypt();
+            //}
+
+            PreLoad();
         }
 
         /// <summary>
@@ -125,6 +143,8 @@ namespace RainbowDrawStudio
 
             if (Login(account_textEdit.Text.Trim(), password_textEdit.Text.Trim()))
             {
+                XmlCreate();
+
                 MainForm.MainForm form = new MainForm.MainForm();
                 Program.ApplicationContext.MainForm = form;
                 this.Close();
@@ -154,6 +174,53 @@ namespace RainbowDrawStudio
                 return false;
             }
             return true;
+        }
+
+        private void account_textEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 13)
+                return;
+            password_textEdit.Focus();
+
+        }
+
+        /// <summary>
+        /// 预载之前要做的事
+        /// </summary>
+        private void PreLoad()
+        {
+            if (!File.Exists(@"./CONFIG.xml"))
+                return;
+            XDocument xml = XDocument.Load("./CONFIG.xml");
+            var rootNode = xml.Document.Root;
+            var result = rootNode.Element("Check").Attribute("Remeber").Value;
+            int iResult = int.Parse(result.ToString());
+            if (iResult == 1)
+            {
+                remember_checkEdit.Checked = true;
+            }
+            else
+            {
+                remember_checkEdit.Checked = false;
+                return;
+            }
+            result = rootNode.Element("Account").Attribute("Account").Value;
+            account_textEdit.Text = result;
+            result = rootNode.Element("Password").Attribute("pwd").Value;
+            password_textEdit.Text = Encryption.DecryptBase64(result);
+        }
+
+        private void XmlCreate()
+        {
+            XDocument xml = new XDocument(
+                new XDeclaration("1.0", "utf-8", "yes"),
+                new XElement("AccountInfo", 
+                    new XElement("Account", new XAttribute("Account", account_textEdit.Text.Trim())),
+                    new XElement("Password", new XAttribute("pwd", Encryption.EncryptBase64(password_textEdit.Text.Trim()))),
+                    new XElement("Check", new XAttribute("Remeber", remember_checkEdit.Checked ? 1 : 0))
+                    )
+                );
+            xml.Save("CONFIG.xml");
         }
     }
 }

@@ -140,6 +140,7 @@
             this.account_textEdit.Properties.MaxLength = 200;
             this.account_textEdit.Size = new System.Drawing.Size(200, 20);
             this.account_textEdit.TabIndex = 1;
+            this.account_textEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.account_textEdit_KeyPress);
             // 
             // labelControl2
             // 
