@@ -48,9 +48,16 @@ namespace RDS_Controller
         /// <returns></returns>
         public static int ExecuteNonQuery(string sql)
         {
-            using (SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection))
+            try
             {
-                return command.ExecuteNonQuery();
+                using (SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection))
+                {
+                    return command.ExecuteNonQuery();
+                }
+            }
+            catch (System.Exception ex)
+            {
+                return -1;
             }
         }
 
@@ -61,9 +68,16 @@ namespace RDS_Controller
         /// <returns></returns>
         public static SQLiteDataReader ExecuteReader(string sql)
         {
-            using (SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection))
+            try
             {
-                return command.ExecuteReader();
+                using (SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection))
+                {
+                    return command.ExecuteReader();
+                }
+            }
+            catch (System.Exception ex)
+            {
+                return null;
             }
         }
 

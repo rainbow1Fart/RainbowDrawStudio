@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using RainbowDrawStudio.Public;
 using RDS_Controller;
+using RDS_Model;
 
 namespace RainbowDrawStudio
 {
@@ -18,13 +20,15 @@ namespace RainbowDrawStudio
         {
             InitializeComponent();
             //连接Sqlite数据库
-            if (!SQLiteControl.ConnectToDatabase("./database.sqlite"))
+            if (!SQLiteControl.ConnectToDatabase(@"./DataBase/database.sqlite"))
             {
                 XtraMessageBoxArgs args =
                     ControlHelper.XtraMessageBoxArgs("消息", "连接数据库失败", new DialogResult[] {DialogResult.Yes});
                 XtraMessageBox.Show(args);
                 Application.Exit();
             }
+
+            account_textEdit.Focus();
         }
 
         /// <summary>
@@ -50,7 +54,27 @@ namespace RainbowDrawStudio
         /// <param name="e"></param>
         private void password_textEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == 13)
+            {
+                if (string.IsNullOrEmpty(account_textEdit.Text.Trim()))
+                {
+                    XtraMessageBox.Show("请输入账号！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    account_textEdit.Focus();
+                    return;
+                }
 
+                if (string.IsNullOrEmpty(password_textEdit.Text.Trim()))
+                {
+                    XtraMessageBox.Show("请输入密码！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    password_textEdit.Focus();
+                    return;
+                }
+
+                if (Login(account_textEdit.Text.Trim(), password_textEdit.Text.Trim()))
+                {
+                    this.Close();
+                }
+            }
         }
 
         /// <summary>
@@ -80,7 +104,48 @@ namespace RainbowDrawStudio
         /// <param name="e"></param>
         private void login_simpleButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(account_textEdit.Text.Trim()))
+            {
+                XtraMessageBox.Show( "请输入账号！", "消息", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                account_textEdit.Focus();
+                return;
+            }
 
+            if (string.IsNullOrEmpty(password_textEdit.Text.Trim()))
+            {
+                XtraMessageBox.Show("请输入密码！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                password_textEdit.Focus();
+                return;
+            }
+
+            if (Login(account_textEdit.Text.Trim(), password_textEdit.Text.Trim()))
+            {
+                this.Close();
+            }
+        }
+
+        /// <summary>
+        /// 登录函数
+        /// </summary>
+        /// <param name="Account"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
+        protected bool Login(string Account, string Password)
+        {
+            Password = Encryption.EncryptBase64(Password);
+            //验证账号
+            if (!AccountInfo.AccountChecked(Account))
+            {
+                XtraMessageBox.Show("输入的账号有误,请重新输入", "消息", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            //验证密码
+            if (!AccountInfo.AccountFullChecked(Account, Password))
+            {
+                XtraMessageBox.Show("输入的密码有误,请重新输入!", "消息", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }
