@@ -21,6 +21,12 @@ namespace RainbowDrawStudio.MainForm
             timer.Start();
             timer.Interval = 100;
             labelControl1.Text = string.Format("欢迎你: {0}", AccountInfo.AccountSession.Person);
+
+            //非管理员用户
+            if (AccountInfo.AccountSession.Power != -1)
+            {
+                main_navigationPane.Pages.Remove(account_navigationPage);
+            }
         }
 
         ~MainForm()
@@ -38,6 +44,27 @@ namespace RainbowDrawStudio.MainForm
             //花里胡哨的
             labelControl1.ForeColor = Color.FromArgb(red, green, blue);
             timer_labelControl.ForeColor = Color.FromArgb(red, green, blue);
+        }
+
+        private void navigationPane1_Click(object sender, EventArgs e)
+        {
+            //账号管理
+            if (main_navigationPane.SelectedPage == account_navigationPage)
+            {
+                foreach (Control child in account_navigationPage.Controls)
+                {
+                    StudentManager.StudentManagerControl ctrl = child as StudentManager.StudentManagerControl;
+                    if (ctrl != null)
+                    {
+                        ctrl.Visible = true;
+                        return;
+                    }
+                }
+
+                StudentManager.StudentManagerControl form = new StudentManager.StudentManagerControl();
+                form.Parent = account_navigationPage;
+                form.Dock = DockStyle.Fill;
+            }
         }
     }
 }

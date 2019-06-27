@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.top_panelControl = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.timer_labelControl = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
+            this.main_navigationPane = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.account_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.student_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.top_panelControl)).BeginInit();
             this.top_panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
-            this.navigationPane1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.main_navigationPane)).BeginInit();
+            this.main_navigationPane.SuspendLayout();
             this.SuspendLayout();
             // 
             // top_panelControl
@@ -79,28 +78,29 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.navigationPane1);
+            this.panelControl1.Controls.Add(this.main_navigationPane);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 95);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(784, 466);
             this.panelControl1.TabIndex = 1;
             // 
-            // navigationPane1
+            // main_navigationPane
             // 
-            this.navigationPane1.Controls.Add(this.account_navigationPage);
-            this.navigationPane1.Controls.Add(this.student_navigationPage);
-            this.navigationPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationPane1.Location = new System.Drawing.Point(2, 2);
-            this.navigationPane1.Name = "navigationPane1";
-            this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.main_navigationPane.Controls.Add(this.account_navigationPage);
+            this.main_navigationPane.Controls.Add(this.student_navigationPage);
+            this.main_navigationPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.main_navigationPane.Location = new System.Drawing.Point(2, 2);
+            this.main_navigationPane.Name = "main_navigationPane";
+            this.main_navigationPane.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.account_navigationPage,
             this.student_navigationPage});
-            this.navigationPane1.RegularSize = new System.Drawing.Size(780, 462);
-            this.navigationPane1.SelectedPage = this.student_navigationPage;
-            this.navigationPane1.Size = new System.Drawing.Size(780, 462);
-            this.navigationPane1.TabIndex = 0;
-            this.navigationPane1.Text = "navigationPane1";
+            this.main_navigationPane.RegularSize = new System.Drawing.Size(780, 462);
+            this.main_navigationPane.SelectedPage = this.account_navigationPage;
+            this.main_navigationPane.Size = new System.Drawing.Size(780, 462);
+            this.main_navigationPane.TabIndex = 0;
+            this.main_navigationPane.Text = "MainNavigationPane";
+            this.main_navigationPane.Click += new System.EventHandler(this.navigationPane1_Click);
             // 
             // account_navigationPage
             // 
@@ -133,8 +133,8 @@
             this.top_panelControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
-            this.navigationPane1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.main_navigationPane)).EndInit();
+            this.main_navigationPane.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -145,7 +145,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl timer_labelControl;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraBars.Navigation.NavigationPane navigationPane1;
+        private DevExpress.XtraBars.Navigation.NavigationPane main_navigationPane;
         private DevExpress.XtraBars.Navigation.NavigationPage account_navigationPage;
         private DevExpress.XtraBars.Navigation.NavigationPage student_navigationPage;
         private System.Windows.Forms.Timer timer;

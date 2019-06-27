@@ -60,6 +60,18 @@ namespace RDS_Model
         /// </summary>
         public int Power { get; set; }
 
+        public string StrPower
+        {
+            get
+            {
+                switch (Power)
+                {
+                    case -1: return "超级管理员";
+                    case 0: return "普通用户";
+                    default: return string.Empty;
+                }
+            }
+        }
 
 
 
@@ -74,13 +86,20 @@ namespace RDS_Model
             using (SQLiteDataReader reader = SQLiteControl.ExecuteReader(sql))
             {
                 if (reader == null)
+                {
                     return false;
+                }
+
                 int result = 0;
                 while (reader.Read())
+                {
                     ++result;
+                }
 
                 if (result == 1)
+                {
                     return true;
+                }
             }
             return false;
         }
@@ -96,7 +115,10 @@ namespace RDS_Model
             using (SQLiteDataReader reader = SQLiteControl.ExecuteReader(sql))
             {
                 if (reader == null)
+                {
                     return false;
+                }
+
                 int result = 0;
                 while (reader.Read())
                 {
@@ -113,9 +135,34 @@ namespace RDS_Model
                         : int.Parse(reader["Power"].ToString());
                 }
                 if (result == 1)
+                {
                     return true;
+                }
             }
             return false;
+        }
+
+        /// <summary>
+        /// 简单的查询
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static List<AccountInfo> SimpleQuery(int pageIndex, int pageSize, string key, out int total)
+        {
+            string sql = "select * from UsersTable where Power >= 0";
+            SQLiteDataReader reader = SQLiteControl.ExecuteReader(sql);
+            List<AccountInfo> accounts = Looper(reader);
+            total = accounts == null ? 0 : accounts.Count;
+
+            sql =
+                string.Format(
+                    "select * from UsersTable where (Person like '%{0}%' or Account like '%{0}%') and Power >= 0 limit {1} offset {2}",
+                    key, pageSize, (pageIndex - 1) * pageSize);
+            reader = SQLiteControl.ExecuteReader(sql);
+            accounts.Clear();
+            accounts = Looper(reader);
+            reader.Dispose();
+            return accounts;
         }
 
         /// <summary>
@@ -125,6 +172,11 @@ namespace RDS_Model
         /// <returns></returns>
         public static List<AccountInfo> Looper(SQLiteDataReader reader)
         {
+            if (reader == null)
+            {
+                return null;
+            }
+            _accounts.Clear();
             while (reader.Read())
             {
                 _accounts.Add(new AccountInfo()
@@ -138,7 +190,7 @@ namespace RDS_Model
                 });
             }
 
-            reader.Close();
+            reader.Dispose();
             return _accounts;
         }
 
@@ -150,7 +202,10 @@ namespace RDS_Model
                     account.Person, account.Account, account.Password, account.Key, account.Power);
             int result = SQLiteControl.ExecuteNonQuery(sql);
             if (result != 1)
+            {
                 return false;
+            }
+
             return true;
         }
     }

@@ -47,6 +47,8 @@ namespace RainbowDrawStudio
             //}
 
             PreLoad();
+
+            login_simpleButton.Focus();
         }
 
         /// <summary>

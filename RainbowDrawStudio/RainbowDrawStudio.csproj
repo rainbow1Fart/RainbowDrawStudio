@@ -138,6 +138,12 @@
     <Compile Include="MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\StudentManager\StudentManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\StudentManager\StudentManagerControl.Designer.cs">
+      <DependentUpon>StudentManagerControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Public\ControlHelper.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -148,6 +154,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public\Encryption.cs" />
+    <Compile Include="Public\PageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Public\PageControl.Designer.cs">
+      <DependentUpon>PageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +172,9 @@
     <EmbeddedResource Include="MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\StudentManager\StudentManagerControl.resx">
+      <DependentUpon>StudentManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -171,6 +186,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Public\PageControl.resx">
+      <DependentUpon>PageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
