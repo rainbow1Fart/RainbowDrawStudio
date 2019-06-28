@@ -165,6 +165,20 @@ namespace RDS_Model
             return accounts;
         }
 
+        public static bool SimpleDelete(int[] id)
+        {
+            string sql = string.Format("delete from UsersTable where ID in ({0}", id[0]);
+            for (int i = 1; i < id.Length; i++)
+            {
+                sql += string.Format(", {0}", id[i]);
+            }
+            sql += ")";
+            int result = SQLiteControl.ExecuteNonQuery(sql);
+            if(result > 0)
+                return true;
+            return false;
+        }
+
         /// <summary>
         /// 循环查询后的结果
         /// </summary>

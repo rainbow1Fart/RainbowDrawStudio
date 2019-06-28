@@ -160,6 +160,12 @@
     <Compile Include="Public\PageControl.Designer.cs">
       <DependentUpon>PageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Public\VerificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Public\VerificationForm.Designer.cs">
+      <DependentUpon>VerificationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </Compile>
     <EmbeddedResource Include="Public\PageControl.resx">
       <DependentUpon>PageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Public\VerificationForm.resx">
+      <DependentUpon>VerificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
@@ -221,6 +230,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\coolIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

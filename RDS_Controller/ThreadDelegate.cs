@@ -8,5 +8,7 @@ namespace RDS_Controller
     public class ThreadDelegate
     {
         public delegate void ThreadEvent<T,Y,U>(T t,Y y,U u);
+
+        public  delegate void CustomerEvent();
     }
 }

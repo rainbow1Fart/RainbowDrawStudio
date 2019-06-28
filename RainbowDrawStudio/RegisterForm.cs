@@ -3,12 +3,15 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using RainbowDrawStudio.Public;
+using RDS_Controller;
 using RDS_Model;
 
 namespace RainbowDrawStudio
 {
     public partial class RegisterForm : DevExpress.XtraEditors.XtraForm
     {
+        public static ThreadDelegate.CustomerEvent OnWindowClosed;
+
         public RegisterForm()
         {
             InitializeComponent();
@@ -243,6 +246,11 @@ namespace RainbowDrawStudio
                 XtraMessageBox.Show("注册失败！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            OnWindowClosed?.Invoke();
         }
     }
 }

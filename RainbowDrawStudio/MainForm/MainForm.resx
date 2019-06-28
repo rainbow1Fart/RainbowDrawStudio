@@ -120,4 +120,32 @@
   <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>100, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAA
+        AADq6ur/6enp/+rq6v/p6en/6enp/+np6f/p6en/6enp/+rq6v/p6en/6enp/+np6f/p6en/6enp/+np
+        6f/p6en/6enp/+fn5//n5+f/5ubm/+fn5//m5ub/5ubm/+fn5//n5+f/6Ojo/+bm5v/n5+b/5eXl/+fn
+        5//l5eT/6enp/+np6f/n5+f/6Ojo/+fn5//o6Oj/5+fn/+fn5//o6Oj/6Ojo/+np6f/n5+f/6+ru/+fn
+        5//n5+b/6ens/+np6f/q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/q6un/7Ovt/9rd
+        zf/p6Ov/7ezz/9rczf/q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/q6ur/6enn//Du
+        +v+6xnj/tsJ2/8HKkv+wv2D/7u33/+rq6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/q6ur/6urq/+np
+        5//v7vn/wMuE/5StDf+VrQ7/tcNl/+7t9//q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq
+        6v/p6ef/7+75/7/KhP+YsBX/mbEW/7TDZ//u7ff/6urq/+rq6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq
+        6v/q6ur/6enn/+/u+f+/yoT/mLAU/5ixFf+0w2b/7u33/+rq6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq
+        6v/q6ur/6urq/+np5//v7vn/v8qE/5iwE/+YsRX/tMNm/+7t9//q6ur/6urq/+rq6v/q6ur/6urq/+rq
+        6v/q6ur/6urq/+rq6v/p6ef/7+75/7/KhP+YsBP/mLEV/7TDZv/u7ff/6urq/+rq6v/q6ur/6urq/+rq
+        6v/q6ur/6urq/+rq6v/q6ur/6enn/+/u+f+/yoT/mLAT/5ixFf+0w2b/7u33/+rq6v/q6ur/6urq/+rq
+        6v/q6ur/6urq/+rq6v/q6ur/6urq/+np5//v7vn/v8qE/5iwE/+YsRX/tMNm/+7t9//q6ur/6urq/+rq
+        6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/p6ef/7+75/7/KhP+YsBP/mLEV/7TDZv/u7ff/6urq/+rq
+        6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/q6ur/6enn/+/u+f+/yoT/mLAT/5ixFf+0w2b/7u33/+rq
+        6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/q6ur/6urq/+np5//v7vn/v8qE/5iwE/+YsRX/tMNm/+7t
+        9//q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/q6ur/6urq/+rq6v/p6ef/7+75/8DLhP+YsBT/mLEV/7XD
+        Z//u7ff/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

@@ -100,14 +100,25 @@ namespace RainbowDrawStudio.MainForm.StudentManager
             gridControl1.DataSource = AccountInfo.SimpleQuery(_pageIndex, _pageSize, _key, out _pageTotal);
             gridControl1.RefreshDataSource();
             gridView1.MoveBy(0);
-            _page.SetPage(_pageIndex, _pageSize, _pageTotal);
+             _page.SetPage(_pageIndex, _pageSize, _pageTotal);
         }
 
         private void new_toolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegisterForm form = new RegisterForm();
+            RegisterForm.OnWindowClosed += OnWindowClosed;
             form.Text = "新建账号";
             form.Show();
+        }
+
+        private void OnWindowClosed()
+        {
+            RegisterForm.OnWindowClosed -= OnWindowClosed;
+            Query();
+        }
+        private void Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Query();
         }
 
         private void edit_toolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,8 +128,38 @@ namespace RainbowDrawStudio.MainForm.StudentManager
 
         private void delete_toolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (XtraMessageBox.Show("确认删除选择的内容吗？删除后无法找回，请谨慎操作。", "消息", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.No)
+                return;
 
+            //验证当前登录用户密码
+            VerificationForm form = new VerificationForm();
+            form.FormClosed += Form_FormClosed;
+            form.ShowDialog();
+            form.FormClosed -= Form_FormClosed;
+            if (!form.Result)
+                return;
+
+            int[] selects = gridView1.GetSelectedRows();
+            int[] ids = new int[selects.Length];
+            for (int i = 0; i < selects.Length; i++)
+            {
+                ids[i] = (gridView1.GetRow(selects[i]) as AccountInfo).ID;
+            }
+
+            if (AccountInfo.SimpleDelete(ids))
+            {
+                XtraMessageBoxArgs args = ControlHelper.XtraMessageBoxArgs("消息","删除成功", new DialogResult[]{ DialogResult.OK});
+                XtraMessageBox.Show(args);
+                return;
+            }
+            else
+            {
+                XtraMessageBoxArgs args = ControlHelper.XtraMessageBoxArgs("消息", "删除失败", new DialogResult[] { DialogResult.OK });
+                XtraMessageBox.Show(args);
+            }
         }
+
 
         private void StudentManagerControl_VisibleChanged(object sender, EventArgs e)
         {
@@ -126,5 +167,13 @@ namespace RainbowDrawStudio.MainForm.StudentManager
                 return;
             Query();
         }
+
+        private void StudentManagerControl_Load(object sender, EventArgs e)
+        {
+            if (Visible == false)
+                return;
+            Query();
+        }
+
     }
 }

@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.query_simpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.query_textEdit = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.new_toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edit_toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.delete_toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.delete_toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,8 +53,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -121,10 +122,48 @@
             this.gridView1});
             this.gridControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridControl1_KeyPress);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.new_toolStripMenuItem,
+            this.edit_toolStripMenuItem,
+            this.toolStripSeparator1,
+            this.delete_toolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(143, 76);
+            // 
+            // new_toolStripMenuItem
+            // 
+            this.new_toolStripMenuItem.Name = "new_toolStripMenuItem";
+            this.new_toolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.new_toolStripMenuItem.Text = "新建用户(&N)";
+            this.new_toolStripMenuItem.Click += new System.EventHandler(this.new_toolStripMenuItem_Click);
+            // 
+            // edit_toolStripMenuItem
+            // 
+            this.edit_toolStripMenuItem.Name = "edit_toolStripMenuItem";
+            this.edit_toolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.edit_toolStripMenuItem.Text = "编辑用户(&E)";
+            this.edit_toolStripMenuItem.Click += new System.EventHandler(this.edit_toolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
+            // 
+            // delete_toolStripMenuItem
+            // 
+            this.delete_toolStripMenuItem.Name = "delete_toolStripMenuItem";
+            this.delete_toolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.delete_toolStripMenuItem.Text = "删除用户(&D)";
+            this.delete_toolStripMenuItem.Click += new System.EventHandler(this.delete_toolStripMenuItem_Click);
+            // 
             // gridView1
             // 
             this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.SelectedRow.Options.UseFont = true;
+            this.gridView1.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -144,42 +183,6 @@
             this.gridView1.CustomDrawEmptyForeground += new DevExpress.XtraGrid.Views.Base.CustomDrawEventHandler(this.gridView1_CustomDrawEmptyForeground);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.new_toolStripMenuItem,
-            this.edit_toolStripMenuItem,
-            this.toolStripSeparator1,
-            this.delete_toolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(143, 76);
-            // 
-            // new_toolStripMenuItem
-            // 
-            this.new_toolStripMenuItem.Name = "new_toolStripMenuItem";
-            this.new_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.new_toolStripMenuItem.Text = "新建用户(&N)";
-            this.new_toolStripMenuItem.Click += new System.EventHandler(this.new_toolStripMenuItem_Click);
-            // 
-            // edit_toolStripMenuItem
-            // 
-            this.edit_toolStripMenuItem.Name = "edit_toolStripMenuItem";
-            this.edit_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.edit_toolStripMenuItem.Text = "编辑用户(&E)";
-            this.edit_toolStripMenuItem.Click += new System.EventHandler(this.edit_toolStripMenuItem_Click);
-            // 
-            // delete_toolStripMenuItem
-            // 
-            this.delete_toolStripMenuItem.Name = "delete_toolStripMenuItem";
-            this.delete_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.delete_toolStripMenuItem.Text = "删除用户(&D)";
-            this.delete_toolStripMenuItem.Click += new System.EventHandler(this.delete_toolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
-            // 
             // gridColumn1
             // 
             this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
@@ -187,7 +190,7 @@
             this.gridColumn1.Caption = "姓名";
             this.gridColumn1.FieldName = "Person";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
@@ -201,7 +204,7 @@
             this.gridColumn2.Caption = "用户名";
             this.gridColumn2.FieldName = "Account";
             this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.ReadOnly = true;
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
@@ -215,7 +218,7 @@
             this.gridColumn3.Caption = "权限";
             this.gridColumn3.FieldName = "StrPower";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.ReadOnly = true;
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
@@ -230,6 +233,7 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "StudentManagerControl";
             this.Size = new System.Drawing.Size(750, 450);
+            this.Load += new System.EventHandler(this.StudentManagerControl_Load);
             this.VisibleChanged += new System.EventHandler(this.StudentManagerControl_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -240,8 +244,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -64,6 +64,28 @@ namespace RainbowDrawStudio.MainForm
                 StudentManager.StudentManagerControl form = new StudentManager.StudentManagerControl();
                 form.Parent = account_navigationPage;
                 form.Dock = DockStyle.Fill;
+                form.Show();
+            }
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                notifyIcon.Visible = false;
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                notifyIcon.ShowBalloonTip(2000, string.Empty, "程序已经最小化到此处", ToolTipIcon.Info);
+                notifyIcon.Text = string.Format("姓名: {0} \r\n 账号: {1}",AccountInfo.AccountSession.Person, AccountInfo.AccountSession.Account);
+                notifyIcon.Visible = true;
+                this.Hide();
             }
         }
     }

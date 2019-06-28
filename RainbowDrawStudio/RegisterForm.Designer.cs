@@ -298,6 +298,7 @@
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.person_textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.password_textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pwdAgain_textEdit.Properties)).EndInit();
