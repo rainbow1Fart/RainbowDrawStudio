@@ -83,6 +83,37 @@ namespace RDS_Controller
             }
         }
 
+        /// <summary>
+        /// 根据ID去修改指定表名里列的值
+        /// </summary>
+        /// <param name="tableName">表名</param>
+        /// <param name="colIDNames">ID列名</param>
+        /// <param name="IDValues">ID值</param>
+        /// <param name="changedColNames">需要修改的列名</param>
+        /// <param name="changedValues">需要修改的值</param>
+        /// <returns></returns>
+        public static int SQLiteUpDate(string tableName, string colIDNames, 
+            int[] IDValues, string[] changedColNames, string [] changedValues)
+        {
+            if (changedValues.Length != changedColNames.Length)
+                return -1;
+
+            string sql = string.Format("update {0} set {1} = '{2}'", tableName, changedColNames[0], changedValues[0]);
+            for (int i = 1; i < changedValues.Length; i++)
+            {
+                sql += string.Format(", {0} = '{1}'", changedColNames[i], changedValues[i]);
+            }
+
+            sql += string.Format("where {0} in ({1}", colIDNames, IDValues[0]);
+            for (int i = 1; i < IDValues.Length; i++)
+            {
+                sql += string.Format(", {0}", IDValues[i]);
+            }
+
+            sql += ")";
+
+            return ExecuteNonQuery(sql);
+        }
 
     }
 }

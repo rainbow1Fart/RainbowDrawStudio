@@ -49,6 +49,7 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.edite_simpleButton = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.person_textEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.password_textEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pwdAgain_textEdit.Properties)).BeginInit();
@@ -266,6 +267,16 @@
             this.labelControl13.TabIndex = 9;
             this.labelControl13.Text = "Tip:安全码用户密码的找回，请牢记安全码。建议使用手机号作为安全码";
             // 
+            // edite_simpleButton
+            // 
+            this.edite_simpleButton.Location = new System.Drawing.Point(145, 226);
+            this.edite_simpleButton.Name = "edite_simpleButton";
+            this.edite_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.edite_simpleButton.TabIndex = 7;
+            this.edite_simpleButton.Text = "修改";
+            this.edite_simpleButton.Visible = false;
+            this.edite_simpleButton.Click += new System.EventHandler(this.edite_simpleButton_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -285,6 +296,7 @@
             this.Controls.Add(this.account_textEdit);
             this.Controls.Add(this.person_textEdit);
             this.Controls.Add(this.close_simpleButton);
+            this.Controls.Add(this.edite_simpleButton);
             this.Controls.Add(this.register_simpleButton);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
@@ -299,6 +311,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterForm_FormClosed);
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.person_textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.password_textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pwdAgain_textEdit.Properties)).EndInit();
@@ -333,5 +346,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.SimpleButton edite_simpleButton;
     }
 }

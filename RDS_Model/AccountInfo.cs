@@ -142,6 +142,39 @@ namespace RDS_Model
             return false;
         }
 
+        public static AccountInfo FindBackChecked(string account, string key)
+        {
+            string sql = string.Format("select * from UsersTable where Account ='{0}' and Key='{1}'", account,
+                Encryption.EncryptBase64(key));
+            using (SQLiteDataReader reader = SQLiteControl.ExecuteReader(sql))
+            {
+                if (reader == null)
+                {
+                    return null;
+                }
+
+                int result = 0;
+                while (reader.Read() && result < 1)
+                {
+                    result++;
+                    _account.ID = string.IsNullOrEmpty(reader["ID"].ToString())
+                        ? 0
+                        : int.Parse(reader["ID"].ToString());
+                    _account.Person = reader["Person"].ToString();
+                    _account.Account = reader["Account"].ToString();
+                    _account.Password = reader["Password"].ToString();
+                    _account.Key = reader["Key"].ToString();
+                    _account.Power = string.IsNullOrEmpty(reader["Power"].ToString())
+                        ? 0
+                        : int.Parse(reader["Power"].ToString());
+                }
+
+                if (result != 1)
+                    return null;
+            }
+            return _account;
+        }
+
         /// <summary>
         /// 简单的查询
         /// </summary>
@@ -221,6 +254,17 @@ namespace RDS_Model
             }
 
             return true;
+        }
+
+        public static int Modify(AccountInfo account)
+        {
+            return SQLiteControl.SQLiteUpDate("UsersTable", "ID", new int[] {account.ID},
+                new string[] {"Person", "Account", "Password", "Key"},
+                new string[]
+                {
+                    account.Person, account.Account, Encryption.EncryptBase64(account.Password),
+                    Encryption.EncryptBase64(account.Key)
+                });
         }
     }
 

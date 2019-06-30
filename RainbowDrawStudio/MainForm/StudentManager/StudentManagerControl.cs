@@ -123,7 +123,15 @@ namespace RainbowDrawStudio.MainForm.StudentManager
 
         private void edit_toolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AccountInfo account = gridView1.GetRow(_selectionRow) as AccountInfo;
+            if (account == null)
+            {
+                XtraMessageBox.Show("所选信息无效，请刷新后重试", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            RegisterForm form = new RegisterForm(account, WindowsModel.Modify);
+            RegisterForm.OnWindowClosed += OnWindowClosed;
+            form.Show();
         }
 
         private void delete_toolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,7 +146,10 @@ namespace RainbowDrawStudio.MainForm.StudentManager
             form.ShowDialog();
             form.FormClosed -= Form_FormClosed;
             if (!form.Result)
+            {
+                XtraMessageBox.Show("验证失败");
                 return;
+            }
 
             int[] selects = gridView1.GetSelectedRows();
             int[] ids = new int[selects.Length];

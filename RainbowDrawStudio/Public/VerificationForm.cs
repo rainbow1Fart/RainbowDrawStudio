@@ -58,7 +58,7 @@ namespace RainbowDrawStudio.Public
         protected bool Verfication()
         {
             string strPassword = password_textEdit.Text.Trim();
-            if (Encryption.EncryptBase64(strPassword) != AccountInfo.AccountSession.Password)
+            if (RDS_Controller.Encryption.EncryptBase64(strPassword) != AccountInfo.AccountSession.Password)
             {
                 XtraMessageBox.Show("密码验证失败!", "消息", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 _result = false;

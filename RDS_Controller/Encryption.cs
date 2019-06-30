@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RainbowDrawStudio.Public
+namespace RDS_Controller
 {
     public class Encryption
     {

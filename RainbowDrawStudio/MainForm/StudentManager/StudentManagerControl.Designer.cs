@@ -160,9 +160,8 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.SelectedRow.Options.UseFont = true;
-            this.gridView1.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
             this.gridView1.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,

@@ -11,10 +11,37 @@ namespace RainbowDrawStudio
     public partial class RegisterForm : DevExpress.XtraEditors.XtraForm
     {
         public static ThreadDelegate.CustomerEvent OnWindowClosed;
-
+        private AccountInfo _account;
         public RegisterForm()
         {
             InitializeComponent();
+        }
+
+        public RegisterForm(AccountInfo arg, WindowsModel vm)
+        {
+            InitializeComponent();
+            _account = arg;
+            WindowsInit(arg, vm);
+        }
+
+        private void WindowsInit(AccountInfo arg, WindowsModel vm)
+        {
+            switch (vm)
+            {
+                case WindowsModel.Modify:
+                    register_simpleButton.Hide();
+                    edite_simpleButton.Show();
+                    edite_simpleButton.Location = register_simpleButton.Location;
+
+                    person_textEdit.Text = arg.Person;
+                    account_textEdit.Text = arg.Account;
+                    password_textEdit.Text = Encryption.DecryptBase64(arg.Password);
+                    pwdAgain_textEdit.Text = Encryption.DecryptBase64(arg.Password);
+                    key_textEdit.Text = Encryption.DecryptBase64(arg.Key);
+                    keyAgain_textEdit.Text = Encryption.DecryptBase64(arg.Key);
+                    break;
+                default:break;
+            }
         }
 
         private void close_simpleButton_Click(object sender, EventArgs e)
@@ -55,6 +82,34 @@ namespace RainbowDrawStudio
                 XtraMessageBox.Show("注册失败！","消息", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void edite_simpleButton_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("确认修改当前用户的信息吗", "消息", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+                DialogResult.No)
+            return;
+            //敏感操作验证
+            VerificationForm form = new VerificationForm();
+            form.ShowDialog();
+            if (!form.Result)
+            {
+                XtraMessageBox.Show("验证失败");
+                return;
+            }
+
+            _account.Account = account_textEdit.Text.Trim();
+            _account.Person = person_textEdit.Text.Trim();
+            _account.Password = password_textEdit.Text.Trim();
+            _account.Key = key_textEdit.Text.Trim();
+
+            //修改sql数据
+            if (AccountInfo.Modify(_account) < 0)
+                XtraMessageBox.Show("修改用户失败");
+            else
+                XtraMessageBox.Show("修改用户信息成功");
+            this.Close();
+            return;
         }
 
         /// <summary>
@@ -251,6 +306,11 @@ namespace RainbowDrawStudio
         private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             OnWindowClosed?.Invoke();
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

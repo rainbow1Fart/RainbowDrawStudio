@@ -8,7 +8,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using RainbowDrawStudio.Public;
 using RDS_Controller;
 using RDS_Model;
 using System.IO;
@@ -119,7 +118,8 @@ namespace RainbowDrawStudio
         /// <param name="e"></param>
         private void forget_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            FogetAccountForm form = new FogetAccountForm();
+            form.ShowDialog();
         }
 
         /// <summary>
