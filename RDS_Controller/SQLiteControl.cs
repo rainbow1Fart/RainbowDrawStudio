@@ -115,5 +115,37 @@ namespace RDS_Controller
             return ExecuteNonQuery(sql);
         }
 
+        public static int FalseDelete(string tableName, string idColName, string deleteColName, int[] vales)
+        {
+            int length = vales.Length;
+            if (length == 0)
+                return 0;
+            string sql = string.Format("update {0} set {1} = 1 where {2} in ({3}", tableName, deleteColName, idColName,
+                vales[0]);
+            for (int i = 1; i < length; i++)
+            {
+                sql += string.Format(",{0}", vales[i]);
+            }
+
+            sql += ")";
+            return SQLiteControl.ExecuteNonQuery(sql);
+        }
+
+        public static int RealyDelete(string tableName, string idColName, int[] vales)
+        {
+            int length = vales.Length;
+            if (length == 0)
+                return 0;
+            string sql = string.Format("delete from {0} where {1} in ({2}", tableName, idColName,
+                vales[0]);
+            for (int i = 1; i < length; i++)
+            {
+                sql += string.Format(",{0}", vales[i]);
+            }
+
+            sql += ")";
+            return SQLiteControl.ExecuteNonQuery(sql);
+        }
+
     }
 }
