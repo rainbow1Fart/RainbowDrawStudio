@@ -121,5 +121,14 @@ namespace RainbowDrawStudio
                 return false;
             return true;
         }
+
+        private void close_simpleButton_Click(object sender, EventArgs e)
+        {
+            XtraMessageBoxArgs args = ControlHelper.XtraMessageBoxArgs("是否关闭当前窗口？", "消息",
+                new DialogResult[] {DialogResult.Yes, DialogResult.No});
+            if (XtraMessageBox.Show(args) == DialogResult.No)
+                return;
+            this.Close();
+        }
     }
 }

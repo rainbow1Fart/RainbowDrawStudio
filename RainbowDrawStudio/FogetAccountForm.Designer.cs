@@ -140,6 +140,7 @@
             this.close_simpleButton.Size = new System.Drawing.Size(75, 23);
             this.close_simpleButton.TabIndex = 6;
             this.close_simpleButton.Text = "关闭(&C)";
+            this.close_simpleButton.Click += new System.EventHandler(this.close_simpleButton_Click);
             // 
             // labelControl11
             // 
