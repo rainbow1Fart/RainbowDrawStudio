@@ -39,6 +39,7 @@
             this.student_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.restore_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.top_panelControl)).BeginInit();
             this.top_panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -92,16 +93,17 @@
             // 
             this.main_navigationPane.Controls.Add(this.account_navigationPage);
             this.main_navigationPane.Controls.Add(this.student_navigationPage);
+            this.main_navigationPane.Controls.Add(this.restore_navigationPage);
             this.main_navigationPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_navigationPane.Location = new System.Drawing.Point(2, 2);
             this.main_navigationPane.Name = "main_navigationPane";
             this.main_navigationPane.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.account_navigationPage,
-            this.student_navigationPage});
+            this.student_navigationPage,
+            this.restore_navigationPage});
             this.main_navigationPane.RegularSize = new System.Drawing.Size(780, 462);
             this.main_navigationPane.SelectedPage = this.account_navigationPage;
             this.main_navigationPane.Size = new System.Drawing.Size(780, 462);
-            this.main_navigationPane.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
             this.main_navigationPane.TabIndex = 0;
             this.main_navigationPane.Text = "MainNavigationPane";
             this.main_navigationPane.Click += new System.EventHandler(this.navigationPane1_Click);
@@ -110,13 +112,13 @@
             // 
             this.account_navigationPage.Caption = "账号管理";
             this.account_navigationPage.Name = "account_navigationPage";
-            this.account_navigationPage.Size = new System.Drawing.Size(0, 0);
+            this.account_navigationPage.Size = new System.Drawing.Size(686, 402);
             // 
             // student_navigationPage
             // 
             this.student_navigationPage.Caption = "学生信息";
             this.student_navigationPage.Name = "student_navigationPage";
-            this.student_navigationPage.Size = new System.Drawing.Size(698, 402);
+            this.student_navigationPage.Size = new System.Drawing.Size(780, 462);
             // 
             // timer
             // 
@@ -128,6 +130,12 @@
             this.notifyIcon.Text = "notifyIcon1";
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // restore_navigationPage
+            // 
+            this.restore_navigationPage.Caption = "学生回收站";
+            this.restore_navigationPage.Name = "restore_navigationPage";
+            this.restore_navigationPage.Size = new System.Drawing.Size(686, 402);
             // 
             // MainForm
             // 
@@ -162,5 +170,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage student_navigationPage;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.NotifyIcon notifyIcon;
+        private DevExpress.XtraBars.Navigation.NavigationPage restore_navigationPage;
     }
 }

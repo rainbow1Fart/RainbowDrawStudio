@@ -22,7 +22,7 @@ namespace RDS_Model
         /// <summary>
         /// 学生编号
         /// </summary>
-        public string SeriaNum { get; set; }
+        public string SerialNum { get; set; }
 
         /// <summary>
         /// 学生姓名
@@ -84,32 +84,30 @@ namespace RDS_Model
             List<StudentsInfo> students = new List<StudentsInfo>();
             while (reader.Read())
             {
-                students.Add(new StudentsInfo()
-                {
-                    ID = string.IsNullOrEmpty(reader["ID"].ToString()) ? 0 : Int32.Parse(reader["ID"].ToString()),
-                    SeriaNum = reader["SeriaNum"].ToString(),
-                    Name = reader["Name"].ToString(),
-                    Sex = reader["Sex"].ToString(),
-                    Parents = reader["Parents"].ToString(),
-                    Contacts = reader["Contacts"].ToString(),
-                    Address = reader["Address"].ToString(),
-                    Tuition = string.IsNullOrEmpty(reader["Tuition"].ToString())
-                        ? 0
-                        : decimal.Parse(reader["Tution"].ToString()),
-                    Remaining = string.IsNullOrEmpty(reader["Remaining"].ToString())
-                        ? 0
-                        : Int32.Parse(reader["Remaining"].ToString()),
-                    ClassHours = string.IsNullOrEmpty(reader["ClassHours"].ToString())
-                        ? 0
-                        : Int32.Parse(reader["ClassHours"].ToString()),
-                    Pay = (bool) reader["Pay"],
-                    NotPay = string.IsNullOrEmpty(reader["NotPay"].ToString())
-                        ? 0
-                        : decimal.Parse(reader["NotPay"].ToString()),
-                });
+                StudentsInfo stu = new StudentsInfo();
+                stu.ID = string.IsNullOrEmpty(reader["ID"].ToString()) ? 0 : int.Parse(reader["ID"].ToString());
+                stu.SerialNum = reader["SerialNum"].ToString();
+                stu.Name = reader["Name"].ToString();
+                stu.Sex = reader["Sex"].ToString();
+                stu.Parents = reader["Parents"].ToString();
+                stu.Contacts = reader["Contacts"].ToString();
+                stu.Address = reader["Address"].ToString();
+                stu.Tuition = string.IsNullOrEmpty(reader["Tuition"].ToString())
+                    ? 0
+                    : decimal.Parse(reader["Tuition"].ToString());
+                stu.Remaining = string.IsNullOrEmpty(reader["Remaining"].ToString())
+                    ? 0
+                    : Int32.Parse(reader["Remaining"].ToString());
+                stu.ClassHours = string.IsNullOrEmpty(reader["ClassHours"].ToString())
+                    ? 0
+                    : Int32.Parse(reader["ClassHours"].ToString());
+                stu.Pay = (bool) reader["Pay"];
+                stu.NotPay = string.IsNullOrEmpty(reader["NotPay"].ToString())
+                    ? 0
+                    : decimal.Parse(reader["NotPay"].ToString());
+                students.Add(stu);
             }
-
-            reader.Dispose();
+            reader.Close();
             return students;
         }
 
@@ -121,22 +119,23 @@ namespace RDS_Model
         /// <param name="key"></param>
         /// <param name="total"></param>
         /// <returns></returns>
-        public static List<StudentsInfo> SimpleQuerry(int pageIndex, int pageSize, string key, out int total)
+        public static List<StudentsInfo> SimpleQuery(int pageIndex, int pageSize, string key, out int total)
         {
             string sql = string.Format("select * from StudentsTable where IsDelete is NULL or IsDelete = 0");
             SQLiteDataReader reader = SQLiteControl.ExecuteReader(sql);
             total = Looper(reader).Count;
-            reader.Close();
 
             sql = string.Format(
-                "select * from StudentsTable where (SeriaNum like '%{0}%' " +
+                "select * from StudentsTable where (SerialNum like '%{0}%' " +
                 "or Name like '%{0}%' or Parents like '%{0}%' " +
                 "or Address like '%{0}%') " +
                 "and (IsDelete is NULL or IsDelete = 0) " +
                 "limit {1} offset {2}",
                 key, pageSize, (pageIndex - 1) * pageSize);
             reader = SQLiteControl.ExecuteReader(sql);
-            return Looper(reader);
+            var result = Looper(reader);
+            reader.Close();
+            return result;
         }
 
         /// <summary>
@@ -156,10 +155,10 @@ namespace RDS_Model
             reader.Close();
 
             sql = string.Format(
-                "select * from StudentsTable where (SeriaNum like '%{0}%' " +
+                "select * from StudentsTable where (SerialNum like '%{0}%' " +
                 "or Name like '%{0}%' or Parents like '%{0}%' " +
                 "or Address like '%{0}%') " +
-                "and (IsDelete is not NULL or IsDelete = 0) " +
+                "and IsDelete = 1 " +
                 "limit {1} offset {2}",
                 key, pageSize, (pageIndex - 1) * pageSize);
             reader = SQLiteControl.ExecuteReader(sql);
@@ -184,6 +183,16 @@ namespace RDS_Model
         public static int RealyDelete(int[] IDs)
         {
             return SQLiteControl.RealyDelete("StudentsTable", "ID", IDs);
+        }
+
+        /// <summary>
+        /// 恢复选中的数据
+        /// </summary>
+        /// <param name="IDs"></param>
+        /// <returns></returns>
+        public static int Restore(int[] IDs)
+        {
+            return SQLiteControl.Restore("StudentsTable", "ID", "IsDelete", IDs);
         }
 
 

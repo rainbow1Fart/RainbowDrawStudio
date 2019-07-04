@@ -144,11 +144,29 @@
     <Compile Include="MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm\StudentManager\StudentManagerControl.cs">
+    <Compile Include="MainForm\AccountManagerForm\AccountManagerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm\StudentManager\StudentManagerControl.Designer.cs">
-      <DependentUpon>StudentManagerControl.cs</DependentUpon>
+    <Compile Include="MainForm\AccountManagerForm\AccountManagerControl.Designer.cs">
+      <DependentUpon>AccountManagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\RecordStudentManagerForm\RecordStudentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\RecordStudentManagerForm\RecordStudentUserControl.Designer.cs">
+      <DependentUpon>RecordStudentUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\StudentsManagerForm\DetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\StudentsManagerForm\DetailForm.Designer.cs">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\StudentsManagerForm\StudentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\StudentsManagerForm\StudentUserControl.Designer.cs">
+      <DependentUpon>StudentUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Public\ControlHelper.cs" />
     <Compile Include="LoginForm.cs">
@@ -186,8 +204,17 @@
     <EmbeddedResource Include="MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\StudentManager\StudentManagerControl.resx">
-      <DependentUpon>StudentManagerControl.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm\AccountManagerForm\AccountManagerControl.resx">
+      <DependentUpon>AccountManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\RecordStudentManagerForm\RecordStudentUserControl.resx">
+      <DependentUpon>RecordStudentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\StudentsManagerForm\DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\StudentsManagerForm\StudentUserControl.resx">
+      <DependentUpon>StudentUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

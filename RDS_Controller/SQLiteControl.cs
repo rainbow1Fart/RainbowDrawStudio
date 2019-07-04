@@ -115,6 +115,14 @@ namespace RDS_Controller
             return ExecuteNonQuery(sql);
         }
 
+        /// <summary>
+        /// 按指定的表名去修改指定Id列里IsDelete的值
+        /// </summary>
+        /// <param name="tableName">表名</param>
+        /// <param name="idColName">ID列名</param>
+        /// <param name="deleteColName">Delete列名</param>
+        /// <param name="vales">ID列值</param>
+        /// <returns></returns>
         public static int FalseDelete(string tableName, string idColName, string deleteColName, int[] vales)
         {
             int length = vales.Length;
@@ -131,6 +139,37 @@ namespace RDS_Controller
             return SQLiteControl.ExecuteNonQuery(sql);
         }
 
+        /// <summary>
+        /// 按指定的表名去修改指定Id列里IsDelete的值
+        /// </summary>
+        /// <param name="tableName">表名</param>
+        /// <param name="idColName">ID列名</param>
+        /// <param name="deleteColName">Delete列名</param>
+        /// <param name="vales">ID列值</param>
+        /// <returns></returns>
+        public static int Restore(string tableName, string idColName, string deleteColName, int[] vales)
+        {
+            int length = vales.Length;
+            if (length == 0)
+                return 0;
+            string sql = string.Format("update {0} set {1} = 0 where {2} in ({3}", tableName, deleteColName, idColName,
+                vales[0]);
+            for (int i = 1; i < length; i++)
+            {
+                sql += string.Format(",{0}", vales[i]);
+            }
+
+            sql += ")";
+            return SQLiteControl.ExecuteNonQuery(sql);
+        }
+
+        /// <summary>
+        /// 从数据库彻底删除指定数据
+        /// </summary>
+        /// <param name="tableName">表名</param>
+        /// <param name="idColName">ID列名</param>
+        /// <param name="vales">ID列值</param>
+        /// <returns></returns>
         public static int RealyDelete(string tableName, string idColName, int[] vales)
         {
             int length = vales.Length;

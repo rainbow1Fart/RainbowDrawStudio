@@ -22,10 +22,12 @@ namespace RainbowDrawStudio.MainForm
             timer.Interval = 100;
             labelControl1.Text = string.Format("欢迎你: {0}", AccountInfo.AccountSession.Person);
 
+            notifyIcon.Visible = false;
             //非管理员用户
             if (AccountInfo.AccountSession.Power != -1)
             {
                 main_navigationPane.Pages.Remove(account_navigationPage);
+                main_navigationPane.Pages.Remove(restore_navigationPage);
             }
         }
 
@@ -53,18 +55,55 @@ namespace RainbowDrawStudio.MainForm
             {
                 foreach (Control child in account_navigationPage.Controls)
                 {
-                    StudentManager.StudentManagerControl ctrl = child as StudentManager.StudentManagerControl;
+                    AccountManagerForm.AccountManagerControl ctrl = child as AccountManagerForm.AccountManagerControl;
                     if (ctrl != null)
                     {
                         ctrl.Visible = true;
                         return;
                     }
                 }
-
-                StudentManager.StudentManagerControl form = new StudentManager.StudentManagerControl();
+                AccountManagerForm.AccountManagerControl form = new AccountManagerForm.AccountManagerControl();
                 form.Parent = account_navigationPage;
                 form.Dock = DockStyle.Fill;
                 form.Show();
+                return;
+            }
+
+            //学生管理
+            if (main_navigationPane.SelectedPage == student_navigationPage)
+            {
+                foreach (Control child in student_navigationPage.Controls)
+                {
+                    StudentsManagerForm.StudentUserControl ctrl = child as StudentsManagerForm.StudentUserControl;
+                    if (ctrl != null)
+                    {
+                        ctrl.Visible = true;
+                        return;
+                    }
+                }
+                StudentsManagerForm.StudentUserControl form = new StudentsManagerForm.StudentUserControl();
+                form.Parent = student_navigationPage;
+                form.Dock = DockStyle.Fill;
+                form.Show();
+                return;
+            }
+            //学生回收站
+            if (main_navigationPane.SelectedPage == restore_navigationPage)
+            {
+                foreach (Control child in student_navigationPage.Controls)
+                {
+                    RecordStudentManagerForm.RecordStudentUserControl ctrl = child as RecordStudentManagerForm.RecordStudentUserControl;
+                    if (ctrl != null)
+                    {
+                        ctrl.Visible = true;
+                        return;
+                    }
+                }
+                RecordStudentManagerForm.RecordStudentUserControl form = new RecordStudentManagerForm.RecordStudentUserControl();
+                form.Parent = restore_navigationPage;
+                form.Dock = DockStyle.Fill;
+                form.Show();
+                return;
             }
         }
 

@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 using RainbowDrawStudio.Public;
 using RDS_Model;
 
-namespace RainbowDrawStudio.MainForm.StudentManager
+namespace RainbowDrawStudio.MainForm.AccountManagerForm
 {
-    public partial class StudentManagerControl : DevExpress.XtraEditors.XtraUserControl
+    public partial class AccountManagerControl : DevExpress.XtraEditors.XtraUserControl
     {
 
         private PageControl _page;
@@ -22,7 +22,7 @@ namespace RainbowDrawStudio.MainForm.StudentManager
         private int _pageTotal;
         private int _selectionRow;
         private string _key;
-        public StudentManagerControl()
+        public AccountManagerControl()
         {
             InitializeComponent();
             _key = string.Empty;
