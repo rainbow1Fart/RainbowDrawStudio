@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using RainbowDrawStudio.Public;
 using RDS_Model;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace RainbowDrawStudio.MainForm.StudentsManagerForm
 {
@@ -75,10 +70,10 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
         {
             if (e.KeyChar != 13)
                 return;
-            _key = query_textEdit.Text.Trim();Query();
+            _key = query_textEdit.Text.Trim(); Query();
         }
 
-        private void gridView1_FocusedRowChanged(object sender, 
+        private void gridView1_FocusedRowChanged(object sender,
             DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             _selectRow = gridView1.FocusedRowHandle;
@@ -171,6 +166,18 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
             Font font = new Font("微软雅黑", 10, FontStyle.Bold);
             Rectangle r = new Rectangle(e.Bounds.Left + 5, e.Bounds.Top + 5, e.Bounds.Width - 5, e.Bounds.Height - 5);
             e.Graphics.DrawString(s, font, Brushes.Black, r);
+        }
+
+        private void gridView1_CustomColumnDisplayText(object sender,
+            DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "LastPayDate" && !string.IsNullOrEmpty(e.DisplayText))
+            {
+                DateTime d = new DateTime(1970, 1, 1);
+                DateTime dt = DateTime.Parse(e.DisplayText);
+                if (DateTime.Compare(d, dt) >= 0)
+                    e.DisplayText = string.Empty;
+            }
         }
     }
 }

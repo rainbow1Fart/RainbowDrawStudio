@@ -174,7 +174,7 @@
             // restore_toolStripMenuItem
             // 
             this.restore_toolStripMenuItem.Name = "restore_toolStripMenuItem";
-            this.restore_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restore_toolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.restore_toolStripMenuItem.Text = "恢复(&R)";
             this.restore_toolStripMenuItem.Click += new System.EventHandler(this.restore_toolStripMenuItem_Click);
             // 
@@ -186,7 +186,7 @@
             // delete_toolStripMenuItem
             // 
             this.delete_toolStripMenuItem.Name = "delete_toolStripMenuItem";
-            this.delete_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.delete_toolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.delete_toolStripMenuItem.Text = "删除(&D)";
             this.delete_toolStripMenuItem.Click += new System.EventHandler(this.delete_toolStripMenuItem_Click);
             // 
@@ -194,6 +194,8 @@
             // 
             this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.SelectedRow.Options.UseFont = true;
             this.gridView1.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,

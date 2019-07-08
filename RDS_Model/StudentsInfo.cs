@@ -74,6 +74,12 @@ namespace RDS_Model
         /// </summary>
         public decimal NotPay { get; set; }
 
+        /// <summary>
+        /// 最后一次缴费日期
+        /// </summary>
+        public DateTime LastPayDate { get; set; }
+
+
         public static List<StudentsInfo> Looper(SQLiteDataReader reader)
         {
             if (reader == null)
@@ -105,6 +111,8 @@ namespace RDS_Model
                 stu.NotPay = string.IsNullOrEmpty(reader["NotPay"].ToString())
                     ? 0
                     : decimal.Parse(reader["NotPay"].ToString());
+                if(string.IsNullOrEmpty(reader["LastPayDate"].ToString()))
+                    stu.LastPayDate = new DateTime(1970,1,1);
                 students.Add(stu);
             }
             reader.Close();
