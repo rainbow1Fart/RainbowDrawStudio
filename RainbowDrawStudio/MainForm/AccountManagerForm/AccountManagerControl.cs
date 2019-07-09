@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.DataAccess.Sql;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
 using RainbowDrawStudio.Public;
 using RDS_Model;
 
@@ -61,7 +62,7 @@ namespace RainbowDrawStudio.MainForm.AccountManagerForm
         private void gridView1_RowClick(object sender, 
             DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            _selectionRow = gridView1.FocusedRowHandle;
+            _selectionRow = e.RowHandle;
         }
 
         private void gridView1_FocusedRowChanged(object sender, 
@@ -98,8 +99,10 @@ namespace RainbowDrawStudio.MainForm.AccountManagerForm
         private void Query()
         {
             gridControl1.DataSource = AccountInfo.SimpleQuery(_pageIndex, _pageSize, _key, out _pageTotal);
+            gridView1.FocusedRowHandle = _selectionRow;
+            ColumnView columnView = gridControl1.FocusedView as ColumnView;
+            columnView.MoveBy(0);
             gridControl1.RefreshDataSource();
-            gridView1.MoveBy(0);
              _page.SetPage(_pageIndex, _pageSize, _pageTotal);
         }
 

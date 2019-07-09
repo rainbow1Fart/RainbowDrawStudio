@@ -4,6 +4,7 @@ using RDS_Model;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace RainbowDrawStudio.MainForm.StudentsManagerForm
 {
@@ -15,7 +16,6 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
         private int _pageTotal;
         private int _selectionRow;
         private string _key;
-        private int _selectRow;
 
         public StudentUserControl()
         {
@@ -26,7 +26,7 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
             _pageIndex = _page.PageIndex;
             _pageSize = _page.PageSize;
             _pageTotal = _page.PageTotal;
-            _selectRow = 0;
+
             _page.Parent = splitContainer1.Panel2;
             _page.Dock = DockStyle.Fill;
             _page.PageChanged += Page_PageChanged;
@@ -41,8 +41,10 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
         private void Query()
         {
             gridControl1.DataSource = StudentsInfo.SimpleQuery(_pageIndex, _pageSize, _key, out _pageTotal);
+            gridView1.FocusedRowHandle = _selectionRow;
+            ColumnView columnView = gridControl1.FocusedView as ColumnView;
+            columnView.MoveBy(0);
             gridControl1.RefreshDataSource();
-            gridView1.MoveBy(0);
             _page.SetPage(_pageIndex, _pageSize, _pageTotal);
         }
 
@@ -73,10 +75,10 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
             _key = query_textEdit.Text.Trim(); Query();
         }
 
-        private void gridView1_FocusedRowChanged(object sender,
-            DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        private void gridView1_RowClick(object sender,
+            DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            _selectRow = gridView1.FocusedRowHandle;
+            _selectionRow = e.RowHandle;
         }
 
         private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
