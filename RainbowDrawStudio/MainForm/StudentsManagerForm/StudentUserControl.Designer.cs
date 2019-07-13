@@ -156,31 +156,32 @@
             this.toolStripSeparator1,
             this.delete_toolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 98);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // new_toolStripMenuItem
             // 
             this.new_toolStripMenuItem.Name = "new_toolStripMenuItem";
-            this.new_toolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.new_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.new_toolStripMenuItem.Text = "新建学生信息(&N)";
             this.new_toolStripMenuItem.Click += new System.EventHandler(this.new_toolStripMenuItem_Click);
             // 
             // edit_toolStripMenuItem
             // 
             this.edit_toolStripMenuItem.Name = "edit_toolStripMenuItem";
-            this.edit_toolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.edit_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.edit_toolStripMenuItem.Text = "编辑学生信息(&E)";
             this.edit_toolStripMenuItem.Click += new System.EventHandler(this.edit_toolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // delete_toolStripMenuItem
             // 
             this.delete_toolStripMenuItem.Name = "delete_toolStripMenuItem";
-            this.delete_toolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.delete_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.delete_toolStripMenuItem.Text = "删除学生信息(&D)";
             this.delete_toolStripMenuItem.Click += new System.EventHandler(this.delete_toolStripMenuItem_Click);
             // 
@@ -214,7 +215,7 @@
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowErrorPanel = DevExpress.Utils.DefaultBoolean.False;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             this.gridView1.CustomDrawEmptyForeground += new DevExpress.XtraGrid.Views.Base.CustomDrawEventHandler(this.gridView1_CustomDrawEmptyForeground);
             this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
             // 

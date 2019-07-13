@@ -32,6 +32,13 @@ namespace RainbowDrawStudio
             return args;
         }
 
+        public static string CreateSerinalNum()
+        {
+            string sn = string.Empty;
+            sn = string.Format("{0}{1}{2}-{3}", DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day,
+                DateTime.Now.ToFileTimeUtc());
+            return sn;
+        }
 
 
         ////关于水印控件的一些代码

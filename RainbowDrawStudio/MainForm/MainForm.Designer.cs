@@ -37,9 +37,9 @@
             this.main_navigationPane = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.account_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.student_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.restore_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.restore_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.top_panelControl)).BeginInit();
             this.top_panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -120,6 +120,12 @@
             this.student_navigationPage.Name = "student_navigationPage";
             this.student_navigationPage.Size = new System.Drawing.Size(780, 462);
             // 
+            // restore_navigationPage
+            // 
+            this.restore_navigationPage.Caption = "学生回收站";
+            this.restore_navigationPage.Name = "restore_navigationPage";
+            this.restore_navigationPage.Size = new System.Drawing.Size(686, 402);
+            // 
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
@@ -131,12 +137,6 @@
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
-            // restore_navigationPage
-            // 
-            this.restore_navigationPage.Caption = "学生回收站";
-            this.restore_navigationPage.Name = "restore_navigationPage";
-            this.restore_navigationPage.Size = new System.Drawing.Size(686, 402);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -147,6 +147,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "七彩画室";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.top_panelControl)).EndInit();
             this.top_panelControl.ResumeLayout(false);

@@ -40,7 +40,7 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
         }
         private void Query()
         {
-            gridControl1.DataSource = StudentsInfo.SimpleQuery(_pageIndex, _pageSize, _key, out _pageTotal);
+            gridControl1.DataSource = StudentInfo.SimpleQuery(_pageIndex, _pageSize, _key, out _pageTotal);
             gridView1.FocusedRowHandle = _selectionRow;
             ColumnView columnView = gridControl1.FocusedView as ColumnView;
             columnView.MoveBy(0);
@@ -75,15 +75,9 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
             _key = query_textEdit.Text.Trim(); Query();
         }
 
-        private void gridView1_RowClick(object sender,
-            DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            _selectionRow = e.RowHandle;
-        }
-
         private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            StudentsInfo stu = gridView1.GetRow(_selectionRow) as StudentsInfo;
+            StudentInfo stu = gridView1.GetRow(_selectionRow) as StudentInfo;
             if (stu == null)
             {
                 XtraMessageBox.Show("所选信息无效，请刷新后重试", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -118,10 +112,10 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
 
             for (int i = 0; i < rows.Length; i++)
             {
-                ids[i] = (gridView1.GetRow(rows[i]) as StudentsInfo).ID;
+                ids[i] = (gridView1.GetRow(rows[i]) as StudentInfo).ID;
             }
 
-            int result = StudentsInfo.FalseDelete(ids);
+            int result = StudentInfo.FalseDelete(ids);
             if (result > 0)
             {
                 XtraMessageBox.Show("删除成功");
@@ -135,7 +129,7 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
 
         private void edit_toolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StudentsInfo stu = gridView1.GetRow(_selectionRow) as StudentsInfo;
+            StudentInfo stu = gridView1.GetRow(_selectionRow) as StudentInfo;
             if (stu == null)
             {
                 XtraMessageBox.Show("所选信息无效，请刷新后重试", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -149,7 +143,10 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
 
         private void new_toolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //学生信息详细界面
+            DetailForm form = new DetailForm(new StudentInfo(){SerialNum = ControlHelper.CreateSerinalNum(), LastPayDate = DateTime.Today}, WindowsModel.AddNew);
+            DetailForm.OnWindowClosed += OnWindowClosed;
+            form.Show();
         }
 
         private void gridView1_CustomDrawEmptyForeground(object sender, DevExpress.XtraGrid.Views.Base.CustomDrawEventArgs e)
@@ -180,6 +177,17 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
                 if (DateTime.Compare(d, dt) >= 0)
                     e.DisplayText = string.Empty;
             }
+        }
+
+        private void gridView1_RowCellClick(object sender, 
+            DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            _selectionRow = e.RowHandle;
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            _selectionRow = gridView1.FocusedRowHandle;
         }
     }
 }

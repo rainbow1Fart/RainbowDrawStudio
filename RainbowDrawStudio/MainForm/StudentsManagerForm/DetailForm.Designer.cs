@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.sex_comboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.address_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.contacts_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.parents_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.name_textEdit = new DevExpress.XtraEditors.TextEdit();
             this.sn_textEdit = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -43,24 +44,50 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.last_dateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.remaining_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.classHours_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.tuition_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.yes_checkEdit = new DevExpress.XtraEditors.CheckEdit();
+            this.no_checkEdit = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.notPay_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.edit_simpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.updata_simpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.close_simpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.update_linkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sex_comboBoxEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.address_textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parents_textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.name_textEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sn_textEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.last_dateEdit.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.last_dateEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.remaining_textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classHours_textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tuition_textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yes_checkEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no_checkEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notPay_textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -76,17 +103,17 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(594, 292);
-            this.splitContainer1.SplitterDistance = 291;
+            this.splitContainer1.Size = new System.Drawing.Size(604, 267);
+            this.splitContainer1.SplitterDistance = 279;
             this.splitContainer1.TabIndex = 0;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.comboBoxEdit1);
-            this.groupControl1.Controls.Add(this.textEdit6);
-            this.groupControl1.Controls.Add(this.textEdit5);
-            this.groupControl1.Controls.Add(this.textEdit4);
-            this.groupControl1.Controls.Add(this.textEdit2);
+            this.groupControl1.Controls.Add(this.sex_comboBoxEdit);
+            this.groupControl1.Controls.Add(this.address_textEdit);
+            this.groupControl1.Controls.Add(this.contacts_textEdit);
+            this.groupControl1.Controls.Add(this.parents_textEdit);
+            this.groupControl1.Controls.Add(this.name_textEdit);
             this.groupControl1.Controls.Add(this.sn_textEdit);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl6);
@@ -97,61 +124,68 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(291, 292);
+            this.groupControl1.Size = new System.Drawing.Size(279, 267);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "学生信息";
             // 
-            // comboBoxEdit1
+            // sex_comboBoxEdit
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(66, 110);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.sex_comboBoxEdit.Location = new System.Drawing.Point(66, 110);
+            this.sex_comboBoxEdit.Name = "sex_comboBoxEdit";
+            this.sex_comboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            this.sex_comboBoxEdit.Properties.Items.AddRange(new object[] {
             " ",
             "男",
             "女"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(190, 20);
-            this.comboBoxEdit1.TabIndex = 3;
+            this.sex_comboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.sex_comboBoxEdit.Size = new System.Drawing.Size(190, 20);
+            this.sex_comboBoxEdit.TabIndex = 3;
             // 
-            // textEdit6
+            // address_textEdit
             // 
-            this.textEdit6.Location = new System.Drawing.Point(66, 206);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(190, 20);
-            this.textEdit6.TabIndex = 6;
+            this.address_textEdit.Location = new System.Drawing.Point(66, 206);
+            this.address_textEdit.Name = "address_textEdit";
+            this.address_textEdit.Properties.MaxLength = 100;
+            this.address_textEdit.Size = new System.Drawing.Size(190, 20);
+            this.address_textEdit.TabIndex = 6;
             // 
-            // textEdit5
+            // contacts_textEdit
             // 
-            this.textEdit5.Location = new System.Drawing.Point(66, 174);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(190, 20);
-            this.textEdit5.TabIndex = 5;
+            this.contacts_textEdit.Location = new System.Drawing.Point(66, 174);
+            this.contacts_textEdit.Name = "contacts_textEdit";
+            this.contacts_textEdit.Properties.MaxLength = 100;
+            this.contacts_textEdit.Size = new System.Drawing.Size(190, 20);
+            this.contacts_textEdit.TabIndex = 5;
             // 
-            // textEdit4
+            // parents_textEdit
             // 
-            this.textEdit4.Location = new System.Drawing.Point(66, 142);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(190, 20);
-            this.textEdit4.TabIndex = 4;
+            this.parents_textEdit.Location = new System.Drawing.Point(66, 142);
+            this.parents_textEdit.Name = "parents_textEdit";
+            this.parents_textEdit.Properties.MaxLength = 100;
+            this.parents_textEdit.Size = new System.Drawing.Size(190, 20);
+            this.parents_textEdit.TabIndex = 4;
             // 
-            // textEdit2
+            // name_textEdit
             // 
-            this.textEdit2.Location = new System.Drawing.Point(66, 78);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(190, 20);
-            this.textEdit2.TabIndex = 2;
+            this.name_textEdit.Location = new System.Drawing.Point(66, 78);
+            this.name_textEdit.Name = "name_textEdit";
+            this.name_textEdit.Properties.MaxLength = 100;
+            this.name_textEdit.Size = new System.Drawing.Size(190, 20);
+            this.name_textEdit.TabIndex = 2;
             // 
             // sn_textEdit
             // 
             this.sn_textEdit.Location = new System.Drawing.Point(66, 46);
             this.sn_textEdit.Name = "sn_textEdit";
+            this.sn_textEdit.Properties.MaxLength = 100;
             this.sn_textEdit.Properties.ReadOnly = true;
             this.sn_textEdit.Size = new System.Drawing.Size(190, 20);
             this.sn_textEdit.TabIndex = 1;
             // 
             // labelControl2
             // 
+            this.labelControl2.Enabled = false;
             this.labelControl2.Location = new System.Drawing.Point(12, 49);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 14);
@@ -160,6 +194,7 @@
             // 
             // labelControl6
             // 
+            this.labelControl6.Enabled = false;
             this.labelControl6.Location = new System.Drawing.Point(12, 209);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(48, 14);
@@ -168,6 +203,7 @@
             // 
             // labelControl5
             // 
+            this.labelControl5.Enabled = false;
             this.labelControl5.Location = new System.Drawing.Point(12, 177);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(48, 14);
@@ -176,6 +212,7 @@
             // 
             // labelControl4
             // 
+            this.labelControl4.Enabled = false;
             this.labelControl4.Location = new System.Drawing.Point(12, 145);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(48, 14);
@@ -184,6 +221,7 @@
             // 
             // labelControl3
             // 
+            this.labelControl3.Enabled = false;
             this.labelControl3.Location = new System.Drawing.Point(12, 113);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 14);
@@ -192,6 +230,7 @@
             // 
             // labelControl1
             // 
+            this.labelControl1.Enabled = false;
             this.labelControl1.Location = new System.Drawing.Point(12, 81);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
@@ -200,6 +239,16 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.update_linkLabel);
+            this.groupControl2.Controls.Add(this.no_checkEdit);
+            this.groupControl2.Controls.Add(this.yes_checkEdit);
+            this.groupControl2.Controls.Add(this.labelControl12);
+            this.groupControl2.Controls.Add(this.labelControl11);
+            this.groupControl2.Controls.Add(this.notPay_textEdit);
+            this.groupControl2.Controls.Add(this.tuition_textEdit);
+            this.groupControl2.Controls.Add(this.classHours_textEdit);
+            this.groupControl2.Controls.Add(this.remaining_textEdit);
+            this.groupControl2.Controls.Add(this.last_dateEdit);
             this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.labelControl9);
             this.groupControl2.Controls.Add(this.labelControl8);
@@ -207,48 +256,204 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(299, 292);
+            this.groupControl2.Size = new System.Drawing.Size(321, 267);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "学费信息";
             // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(14, 49);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(36, 14);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "总学费";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(14, 81);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(48, 14);
-            this.labelControl8.TabIndex = 1;
-            this.labelControl8.Text = "当期课时";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Location = new System.Drawing.Point(14, 113);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(48, 14);
-            this.labelControl9.TabIndex = 1;
-            this.labelControl9.Text = "剩余课时";
-            // 
             // labelControl10
             // 
+            this.labelControl10.Enabled = false;
             this.labelControl10.Location = new System.Drawing.Point(14, 145);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(96, 14);
             this.labelControl10.TabIndex = 1;
             this.labelControl10.Text = "最后一次追缴日期";
             // 
+            // labelControl9
+            // 
+            this.labelControl9.Enabled = false;
+            this.labelControl9.Location = new System.Drawing.Point(14, 113);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(48, 14);
+            this.labelControl9.TabIndex = 1;
+            this.labelControl9.Text = "剩余课时";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Enabled = false;
+            this.labelControl8.Location = new System.Drawing.Point(14, 81);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(60, 14);
+            this.labelControl8.TabIndex = 1;
+            this.labelControl8.Text = "当期总课时";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Enabled = false;
+            this.labelControl7.Location = new System.Drawing.Point(14, 49);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(36, 14);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "总学费";
+            // 
+            // last_dateEdit
+            // 
+            this.last_dateEdit.EditValue = null;
+            this.last_dateEdit.Location = new System.Drawing.Point(116, 142);
+            this.last_dateEdit.Name = "last_dateEdit";
+            this.last_dateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.last_dateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.last_dateEdit.Size = new System.Drawing.Size(190, 20);
+            this.last_dateEdit.TabIndex = 10;
+            // 
+            // remaining_textEdit
+            // 
+            this.remaining_textEdit.Location = new System.Drawing.Point(116, 110);
+            this.remaining_textEdit.Name = "remaining_textEdit";
+            this.remaining_textEdit.Properties.Mask.EditMask = "-?\\d+";
+            this.remaining_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.remaining_textEdit.Properties.Mask.PlaceHolder = '0';
+            this.remaining_textEdit.Properties.MaxLength = 10;
+            this.remaining_textEdit.Size = new System.Drawing.Size(190, 20);
+            this.remaining_textEdit.TabIndex = 9;
+            // 
+            // classHours_textEdit
+            // 
+            this.classHours_textEdit.Location = new System.Drawing.Point(116, 78);
+            this.classHours_textEdit.Name = "classHours_textEdit";
+            this.classHours_textEdit.Properties.Mask.EditMask = "-?\\d+";
+            this.classHours_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.classHours_textEdit.Properties.Mask.PlaceHolder = '0';
+            this.classHours_textEdit.Properties.MaxLength = 10;
+            this.classHours_textEdit.Size = new System.Drawing.Size(190, 20);
+            this.classHours_textEdit.TabIndex = 8;
+            // 
+            // tuition_textEdit
+            // 
+            this.tuition_textEdit.Location = new System.Drawing.Point(116, 46);
+            this.tuition_textEdit.Name = "tuition_textEdit";
+            this.tuition_textEdit.Properties.Mask.EditMask = "(-?[0-9])+(.[0-9]{1,2})?";
+            this.tuition_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.tuition_textEdit.Properties.Mask.PlaceHolder = '0';
+            this.tuition_textEdit.Properties.MaxLength = 10;
+            this.tuition_textEdit.Size = new System.Drawing.Size(190, 20);
+            this.tuition_textEdit.TabIndex = 7;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Enabled = false;
+            this.labelControl11.Location = new System.Drawing.Point(14, 177);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(48, 14);
+            this.labelControl11.TabIndex = 4;
+            this.labelControl11.Text = "是否缴清";
+            // 
+            // yes_checkEdit
+            // 
+            this.yes_checkEdit.Location = new System.Drawing.Point(116, 175);
+            this.yes_checkEdit.Name = "yes_checkEdit";
+            this.yes_checkEdit.Properties.Caption = "已缴清";
+            this.yes_checkEdit.Properties.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("checkEdit1.Properties.ImageOptions.ImageChecked")));
+            this.yes_checkEdit.Size = new System.Drawing.Size(75, 19);
+            this.yes_checkEdit.TabIndex = 11;
+            // 
+            // no_checkEdit
+            // 
+            this.no_checkEdit.Location = new System.Drawing.Point(231, 175);
+            this.no_checkEdit.Name = "no_checkEdit";
+            this.no_checkEdit.Properties.Caption = "未缴清";
+            this.no_checkEdit.Properties.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("checkEdit2.Properties.ImageOptions.ImageChecked")));
+            this.no_checkEdit.Size = new System.Drawing.Size(75, 19);
+            this.no_checkEdit.TabIndex = 12;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Enabled = false;
+            this.labelControl12.Location = new System.Drawing.Point(14, 209);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(48, 14);
+            this.labelControl12.TabIndex = 4;
+            this.labelControl12.Text = "未缴余额";
+            // 
+            // notPay_textEdit
+            // 
+            this.notPay_textEdit.Location = new System.Drawing.Point(116, 206);
+            this.notPay_textEdit.Name = "notPay_textEdit";
+            this.notPay_textEdit.Properties.Mask.EditMask = "(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))";
+            this.notPay_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.notPay_textEdit.Properties.Mask.PlaceHolder = '0';
+            this.notPay_textEdit.Properties.MaxLength = 10;
+            this.notPay_textEdit.Size = new System.Drawing.Size(190, 20);
+            this.notPay_textEdit.TabIndex = 13;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.close_simpleButton);
+            this.splitContainer2.Panel2.Controls.Add(this.updata_simpleButton);
+            this.splitContainer2.Panel2.Controls.Add(this.edit_simpleButton);
+            this.splitContainer2.Size = new System.Drawing.Size(604, 311);
+            this.splitContainer2.SplitterDistance = 267;
+            this.splitContainer2.TabIndex = 1;
+            // 
+            // edit_simpleButton
+            // 
+            this.edit_simpleButton.Location = new System.Drawing.Point(406, 6);
+            this.edit_simpleButton.Name = "edit_simpleButton";
+            this.edit_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.edit_simpleButton.TabIndex = 0;
+            this.edit_simpleButton.Text = "编辑(&E)";
+            this.edit_simpleButton.Click += new System.EventHandler(this.edit_simpleButton_Click);
+            // 
+            // updata_simpleButton
+            // 
+            this.updata_simpleButton.Location = new System.Drawing.Point(203, 6);
+            this.updata_simpleButton.Name = "updata_simpleButton";
+            this.updata_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.updata_simpleButton.TabIndex = 0;
+            this.updata_simpleButton.Text = "更新(&U)";
+            this.updata_simpleButton.Click += new System.EventHandler(this.updata_simpleButton_Click);
+            // 
+            // close_simpleButton
+            // 
+            this.close_simpleButton.Location = new System.Drawing.Point(284, 6);
+            this.close_simpleButton.Name = "close_simpleButton";
+            this.close_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.close_simpleButton.TabIndex = 0;
+            this.close_simpleButton.Text = "关闭(&C)";
+            this.close_simpleButton.Click += new System.EventHandler(this.close_simpleButton_Click);
+            // 
+            // update_linkLabel
+            // 
+            this.update_linkLabel.AutoSize = true;
+            this.update_linkLabel.Location = new System.Drawing.Point(11, 237);
+            this.update_linkLabel.Name = "update_linkLabel";
+            this.update_linkLabel.Size = new System.Drawing.Size(79, 14);
+            this.update_linkLabel.TabIndex = 14;
+            this.update_linkLabel.TabStop = true;
+            this.update_linkLabel.Text = "更新学费信息";
+            this.update_linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.update_linkLabel_LinkClicked);
+            // 
             // DetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 292);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(604, 311);
+            this.Controls.Add(this.splitContainer2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "DetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetailForm";
@@ -262,15 +467,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sex_comboBoxEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.address_textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parents_textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.name_textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sn_textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.last_dateEdit.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.last_dateEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.remaining_textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classHours_textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tuition_textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yes_checkEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.no_checkEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notPay_textEdit.Properties)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -286,15 +503,29 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.ComboBoxEdit sex_comboBoxEdit;
+        private DevExpress.XtraEditors.TextEdit address_textEdit;
+        private DevExpress.XtraEditors.TextEdit contacts_textEdit;
+        private DevExpress.XtraEditors.TextEdit parents_textEdit;
+        private DevExpress.XtraEditors.TextEdit name_textEdit;
         private DevExpress.XtraEditors.TextEdit sn_textEdit;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.CheckEdit no_checkEdit;
+        private DevExpress.XtraEditors.CheckEdit yes_checkEdit;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit notPay_textEdit;
+        private DevExpress.XtraEditors.TextEdit tuition_textEdit;
+        private DevExpress.XtraEditors.TextEdit classHours_textEdit;
+        private DevExpress.XtraEditors.TextEdit remaining_textEdit;
+        private DevExpress.XtraEditors.DateEdit last_dateEdit;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private DevExpress.XtraEditors.SimpleButton close_simpleButton;
+        private DevExpress.XtraEditors.SimpleButton updata_simpleButton;
+        private DevExpress.XtraEditors.SimpleButton edit_simpleButton;
+        private System.Windows.Forms.LinkLabel update_linkLabel;
     }
 }

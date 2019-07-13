@@ -162,6 +162,12 @@
     <Compile Include="MainForm\StudentsManagerForm\DetailForm.Designer.cs">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\StudentsManagerForm\PayDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\StudentsManagerForm\PayDetailForm.Designer.cs">
+      <DependentUpon>PayDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\StudentsManagerForm\StudentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\StudentsManagerForm\DetailForm.resx">
       <DependentUpon>DetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\StudentsManagerForm\PayDetailForm.resx">
+      <DependentUpon>PayDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\StudentsManagerForm\StudentUserControl.resx">
       <DependentUpon>StudentUserControl.cs</DependentUpon>

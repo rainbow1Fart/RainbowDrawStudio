@@ -58,7 +58,7 @@ namespace RainbowDrawStudio.MainForm.RecordStudentManagerForm
 
         protected void Query()
         {
-            gridControl1.DataSource = RDS_Model.StudentsInfo.RealyQuerry(_pageIndex, _pageSize, _key, out _pageTotal);
+            gridControl1.DataSource = RDS_Model.StudentInfo.RealyQuerry(_pageIndex, _pageSize, _key, out _pageTotal);
             gridControl1.RefreshDataSource();
             gridView1.MoveBy(0);
             _page.SetPage(_pageIndex, _pageSize, _pageTotal);
@@ -93,10 +93,10 @@ namespace RainbowDrawStudio.MainForm.RecordStudentManagerForm
 
             for (int i = 0; i < rows.Length; i++)
             {
-                ids[i] = (gridView1.GetRow(rows[i]) as StudentsInfo).ID;
+                ids[i] = (gridView1.GetRow(rows[i]) as StudentInfo).ID;
             }
 
-            int result = StudentsInfo.RealyDelete(ids);
+            int result = StudentInfo.RealyDelete(ids);
             if (result > 0)
             {
                 XtraMessageBox.Show("删除成功");
@@ -123,10 +123,10 @@ namespace RainbowDrawStudio.MainForm.RecordStudentManagerForm
 
             for (int i = 0; i < rows.Length; i++)
             {
-                ids[i] = (gridView1.GetRow(rows[i]) as StudentsInfo).ID;
+                ids[i] = (gridView1.GetRow(rows[i]) as StudentInfo).ID;
             }
 
-            int result = StudentsInfo.Restore(ids);
+            int result = StudentInfo.Restore(ids);
             if (result > 0)
             {
                 XtraMessageBox.Show("恢复成功");

@@ -127,5 +127,15 @@ namespace RainbowDrawStudio.MainForm
                 this.Hide();
             }
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            XtraMessageBoxArgs args = ControlHelper.XtraMessageBoxArgs("消息", "确认退出吗",
+                new DialogResult[] { DialogResult.Yes, DialogResult.No }, 5000, 1);
+            if (XtraMessageBox.Show(args) == DialogResult.No)
+                e.Cancel = true;
+            else
+                e.Cancel = false;
+        }
     }
 }

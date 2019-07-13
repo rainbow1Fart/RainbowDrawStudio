@@ -5,14 +5,14 @@ using System.Data.SQLite;
 
 namespace RDS_Model
 {
-    public class StudentsInfo
+    public class StudentInfo
     {
-        private StudentsInfo()
+        public StudentInfo()
         {
 
         }
 
-        ~StudentsInfo()
+        ~StudentInfo()
         {
 
         }
@@ -65,7 +65,7 @@ namespace RDS_Model
         public int ClassHours { get; set; }
 
         /// <summary>
-        /// 是否缴清
+        /// 是否缴清(true 已缴清 false 未缴清)
         /// </summary>
         public bool Pay { get; set; }
 
@@ -80,17 +80,17 @@ namespace RDS_Model
         public DateTime LastPayDate { get; set; }
 
 
-        public static List<StudentsInfo> Looper(SQLiteDataReader reader)
+        public static List<StudentInfo> Looper(SQLiteDataReader reader)
         {
             if (reader == null)
             {
                 return null;
             }
 
-            List<StudentsInfo> students = new List<StudentsInfo>();
+            List<StudentInfo> students = new List<StudentInfo>();
             while (reader.Read())
             {
-                StudentsInfo stu = new StudentsInfo();
+                StudentInfo stu = new StudentInfo();
                 stu.ID = string.IsNullOrEmpty(reader["ID"].ToString()) ? 0 : int.Parse(reader["ID"].ToString());
                 stu.SerialNum = reader["SerialNum"].ToString();
                 stu.Name = reader["Name"].ToString();
@@ -127,7 +127,7 @@ namespace RDS_Model
         /// <param name="key"></param>
         /// <param name="total"></param>
         /// <returns></returns>
-        public static List<StudentsInfo> SimpleQuery(int pageIndex, int pageSize, string key, out int total)
+        public static List<StudentInfo> SimpleQuery(int pageIndex, int pageSize, string key, out int total)
         {
             string sql = string.Format("select * from StudentsTable where IsDelete is NULL or IsDelete = 0");
             SQLiteDataReader reader = SQLiteControl.ExecuteReader(sql);
@@ -155,7 +155,7 @@ namespace RDS_Model
         /// <param name="total"></param>
         /// <returns></returns>
 
-        public static List<StudentsInfo> RealyQuerry(int pageIndex, int pageSize, string key, out int total)
+        public static List<StudentInfo> RealyQuerry(int pageIndex, int pageSize, string key, out int total)
         {
             string sql = string.Format("select * from StudentsTable where IsDelete = 1");
             SQLiteDataReader reader = SQLiteControl.ExecuteReader(sql);
@@ -203,6 +203,25 @@ namespace RDS_Model
             return SQLiteControl.Restore("StudentsTable", "ID", "IsDelete", IDs);
         }
 
+        /// <summary>
+        /// 创建学生
+        /// </summary>
+        /// <param name="stu"></param>
+        /// <returns></returns>
+        public static int CreateStudentInfo(StudentInfo stu)
+        {
+            string sql = string.Format("insert into StudentsTable values(NULL,'{0}','{1}','{2}','{3}','{4}','{5}',{6},{7},{8},{9},{10},{11}, {12})", stu.SerialNum,
+                stu.Name, stu.Sex, stu.Parents, stu.Contacts, stu.Address, stu.Tuition, stu.Remaining, stu.ClassHours,
+                stu.Pay ? 1 : 0, stu.LastPayDate.ToString("yyyy-MM-dd"), stu.NotPay, 0);
+            return SQLiteControl.ExecuteNonQuery(sql);
+        }
 
+        public static int Updata(StudentInfo stu)
+        {
+            string sql = string.Format("update StudentsTable set Name='{0}', Sex='{1}',Parents='{2}',Contacts='{3}',Address='{4}',Tuition={5},Remaining={6},ClassHours={7},Pay={8},LastPayDate={9},NotPay={10}", stu.SerialNum,
+                stu.Name, stu.Sex, stu.Parents, stu.Contacts, stu.Address, stu.Tuition, stu.Remaining, stu.ClassHours,
+                stu.Pay ? 1 : 0, stu.LastPayDate.ToString("yyyy-MM-dd"), stu.NotPay);
+            return SQLiteControl.ExecuteNonQuery(sql);
+        }
     }
 }
