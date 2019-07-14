@@ -48,6 +48,7 @@ namespace RainbowDrawStudio.MainForm.AccountManagerForm
         {
             if (e.KeyChar != 13)
                 return;
+            _pageIndex = 1;
             _key = query_textEdit.Text.Trim();
             Query();
         }

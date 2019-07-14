@@ -313,7 +313,7 @@
             // 
             this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn7.Caption = "总学费";
+            this.gridColumn7.Caption = "已缴学费";
             this.gridColumn7.FieldName = "Tuition";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;

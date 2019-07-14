@@ -50,7 +50,7 @@ namespace RDS_Model
         public string Address { get; set; }
 
         /// <summary>
-        /// 总学费
+        /// 已缴学费
         /// </summary>
         public decimal Tuition { get; set; }
 

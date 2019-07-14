@@ -105,6 +105,24 @@ namespace RainbowDrawStudio.MainForm
                 form.Show();
                 return;
             }
+            //缴费记录
+            if (main_navigationPane.SelectedPage == payRecord_navigationPage)
+            {
+                foreach (Control child in payRecord_navigationPage.Controls)
+                {
+                    PayRecordForm.PayRecordControl ctrl = child as PayRecordForm.PayRecordControl;
+                    if (ctrl != null)
+                    {
+                        ctrl.Visible = true;
+                        return;
+                    }
+                }
+                PayRecordForm.PayRecordControl form = new PayRecordForm.PayRecordControl();
+                form.Parent = payRecord_navigationPage;
+                form.Dock = DockStyle.Fill;
+                form.Show();
+                return;
+            }
         }
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)

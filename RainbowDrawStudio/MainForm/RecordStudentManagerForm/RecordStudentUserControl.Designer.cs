@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecordStudentUserControl));
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -102,7 +103,7 @@
             // labelControl2
             // 
             this.labelControl2.Enabled = false;
-            this.labelControl2.Location = new System.Drawing.Point(357, 15);
+            this.labelControl2.Location = new System.Drawing.Point(302, 15);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(178, 14);
             this.labelControl2.TabIndex = 4;
@@ -110,11 +111,12 @@
             // 
             // query_simpleButton
             // 
-            this.query_simpleButton.Location = new System.Drawing.Point(276, 11);
+            this.query_simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.query_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("query_simpleButton.ImageOptions.Image")));
+            this.query_simpleButton.Location = new System.Drawing.Point(273, 12);
             this.query_simpleButton.Name = "query_simpleButton";
-            this.query_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.query_simpleButton.Size = new System.Drawing.Size(23, 21);
             this.query_simpleButton.TabIndex = 1;
-            this.query_simpleButton.Text = "查询(&Q)";
             this.query_simpleButton.Click += new System.EventHandler(this.query_simpleButton_Click);
             // 
             // query_textEdit

@@ -52,6 +52,7 @@ namespace RainbowDrawStudio.MainForm.RecordStudentManagerForm
         {
             if (e.KeyChar != 13)
                 return;
+            _pageIndex = 1;
             _key = query_textEdit.Text.Trim();
             Query();
         }

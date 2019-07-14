@@ -32,6 +32,11 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
             _page.PageChanged += Page_PageChanged;
         }
 
+        ~StudentUserControl()
+        {
+            _page.PageChanged -= Page_PageChanged;
+        }
+
         private void Page_PageChanged(object sender, EventArgs e)
         {
             _pageIndex = _page.PageIndex;
@@ -72,7 +77,10 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
         {
             if (e.KeyChar != 13)
                 return;
-            _key = query_textEdit.Text.Trim(); Query();
+
+            _pageIndex = 1;
+            _key = query_textEdit.Text.Trim();
+            Query();
         }
 
         private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -149,7 +157,8 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
             form.Show();
         }
 
-        private void gridView1_CustomDrawEmptyForeground(object sender, DevExpress.XtraGrid.Views.Base.CustomDrawEventArgs e)
+        private void gridView1_CustomDrawEmptyForeground(object sender, 
+            DevExpress.XtraGrid.Views.Base.CustomDrawEventArgs e)
         {
             string s = string.Empty;
             DevExpress.XtraGrid.Views.Base.ColumnView view = sender as DevExpress.XtraGrid.Views.Base.ColumnView;
