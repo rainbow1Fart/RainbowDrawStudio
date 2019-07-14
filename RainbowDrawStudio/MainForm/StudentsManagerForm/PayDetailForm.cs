@@ -14,11 +14,12 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
     public partial class PayDetailForm : DevExpress.XtraEditors.XtraForm
     {
         private StudentInfo _studentInfo;
-        public PayDetailForm(StudentInfo arg)
+        public PayDetailForm(StudentInfo arg, WindowsModel wm)
         {
             InitializeComponent();
             _studentInfo = arg;
             SetWindwosText(arg);
+            ViewInit(wm);
         }
 
         public StudentInfo Result
@@ -40,8 +41,15 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
 
         private void ok_simpleButton_Click(object sender, EventArgs e)
         {
+            if (no_checkEdit.Checked && yes_checkEdit.Checked)
+            {
+                XtraMessageBox.Show("请选择缴费状态", "消息");
+                no_checkEdit.Checked = true;
+                return;
+            }
             if (string.IsNullOrEmpty(last_dateEdit.Text.Trim()))
             {
+                last_dateEdit.DateTime = DateTime.Today;
                 last_dateEdit.Focus();
                 XtraMessageBox.Show("请选择正确的追缴日期", "消息");
                 return;
@@ -50,6 +58,12 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
             if (XtraMessageBox.Show("确认更改以上信息吗？", "消息", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
                 DialogResult.No)
                 return;
+
+            Public.VerificationForm form = new Public.VerificationForm();
+            form.ShowDialog();
+            if (!form.Result)
+                return;
+
             DialogResult = DialogResult.No;
             _studentInfo = GetWindowsText(_studentInfo);
             if (StudentInfo.Updata(_studentInfo) <= 0)
@@ -66,7 +80,7 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
                 Remaining = _studentInfo.Remaining,
                 Pay = _studentInfo.Pay,
                 NotPay = _studentInfo.NotPay,
-                Remark = remaining_textEdit.Text,
+                Remark = remark_memoEdit.Text,
                 LastDateTime = last_dateEdit.DateTime,
                 OperationID = AccountInfo.AccountSession.ID,
                 OperationPerson = AccountInfo.AccountSession.Person,
@@ -93,15 +107,52 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
                 : stu.LastPayDate.ToString();
             if (stu.Pay)
             {
-                no_checkEdit.Checked = true;
+                yes_checkEdit.Checked = true;
+                no_checkEdit.Checked = false;
             }
             else
             {
-                yes_checkEdit.Checked = true;
+                no_checkEdit.Checked = true;
+                yes_checkEdit.Checked = false;
             }
+
             notPay_textEdit.Text = stu.NotPay.ToString();
         }
 
+        private void ViewInit(WindowsModel wm)
+        {
+            switch (wm)
+            {
+                case WindowsModel.Modify:
+                    ok_simpleButton.Enabled = true;
+                    ok_simpleButton.Show();
+
+                    /*缴费信息*/
+                    tuition_textEdit.ReadOnly = false;
+                    classHours_textEdit.ReadOnly = false;
+                    remaining_textEdit.ReadOnly = false;
+                    last_dateEdit.ReadOnly = false;
+                    yes_checkEdit.ReadOnly = false;
+                    no_checkEdit.ReadOnly = false;
+                    notPay_textEdit.ReadOnly = false;
+                    remark_memoEdit.ReadOnly = false;
+                    break;
+               default:
+                    ok_simpleButton.Enabled = false;
+                    ok_simpleButton.Hide();
+
+                    /*缴费信息*/
+                    tuition_textEdit.ReadOnly = true;
+                    classHours_textEdit.ReadOnly = true;
+                    remaining_textEdit.ReadOnly = true;
+                    last_dateEdit.ReadOnly = true;
+                    yes_checkEdit.ReadOnly = true;
+                    no_checkEdit.ReadOnly = true;
+                    notPay_textEdit.ReadOnly = true;
+                    remark_memoEdit.ReadOnly = true;
+                    break;
+            }
+        }
 
         protected StudentInfo GetWindowsText(StudentInfo arg)
         {
@@ -123,6 +174,24 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
                 ? new DateTime(1970, 1, 1)
                 : last_dateEdit.DateTime;
             return stu;
+        }
+
+        private void yes_checkEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckEdit ce = sender as CheckEdit;
+            if (ce.Checked)
+                no_checkEdit.Checked = false;
+            else
+                no_checkEdit.Checked = true;
+        }
+
+        private void no_checkEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckEdit ce = sender as CheckEdit;
+            if (ce.Checked)
+                yes_checkEdit.Checked = false;
+            else
+                yes_checkEdit.Checked = true;
         }
     }
 }

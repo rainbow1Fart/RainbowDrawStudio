@@ -156,32 +156,32 @@
             this.toolStripSeparator1,
             this.delete_toolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 76);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // new_toolStripMenuItem
             // 
             this.new_toolStripMenuItem.Name = "new_toolStripMenuItem";
-            this.new_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.new_toolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.new_toolStripMenuItem.Text = "新建学生信息(&N)";
             this.new_toolStripMenuItem.Click += new System.EventHandler(this.new_toolStripMenuItem_Click);
             // 
             // edit_toolStripMenuItem
             // 
             this.edit_toolStripMenuItem.Name = "edit_toolStripMenuItem";
-            this.edit_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.edit_toolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.edit_toolStripMenuItem.Text = "编辑学生信息(&E)";
             this.edit_toolStripMenuItem.Click += new System.EventHandler(this.edit_toolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
             // 
             // delete_toolStripMenuItem
             // 
             this.delete_toolStripMenuItem.Name = "delete_toolStripMenuItem";
-            this.delete_toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.delete_toolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.delete_toolStripMenuItem.Text = "删除学生信息(&D)";
             this.delete_toolStripMenuItem.Click += new System.EventHandler(this.delete_toolStripMenuItem_Click);
             // 
@@ -266,6 +266,8 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn4.Caption = "家属联系人";
             this.gridColumn4.FieldName = "Parents";
             this.gridColumn4.Name = "gridColumn4";
@@ -279,6 +281,8 @@
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn5.Caption = "家属联系方式";
             this.gridColumn5.FieldName = "Contacts";
             this.gridColumn5.Name = "gridColumn5";
@@ -292,6 +296,8 @@
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn6.Caption = "家庭地址";
             this.gridColumn6.FieldName = "Address";
             this.gridColumn6.Name = "gridColumn6";
@@ -305,6 +311,8 @@
             // 
             // gridColumn7
             // 
+            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn7.Caption = "总学费";
             this.gridColumn7.FieldName = "Tuition";
             this.gridColumn7.Name = "gridColumn7";
@@ -318,6 +326,8 @@
             // 
             // gridColumn8
             // 
+            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn8.Caption = "剩余课时";
             this.gridColumn8.FieldName = "Remaining";
             this.gridColumn8.Name = "gridColumn8";
@@ -331,6 +341,8 @@
             // 
             // gridColumn9
             // 
+            this.gridColumn9.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn9.Caption = "总课时";
             this.gridColumn9.FieldName = "ClassHours";
             this.gridColumn9.Name = "gridColumn9";
@@ -344,6 +356,8 @@
             // 
             // gridColumn11
             // 
+            this.gridColumn11.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn11.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn11.Caption = "最后缴费日期";
             this.gridColumn11.FieldName = "LastPayDate";
             this.gridColumn11.Name = "gridColumn11";
@@ -356,7 +370,10 @@
             // 
             // gridColumn10
             // 
+            this.gridColumn10.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn10.Caption = "未缴清学费";
+            this.gridColumn10.FieldName = "NotPay";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.OptionsColumn.AllowMove = false;

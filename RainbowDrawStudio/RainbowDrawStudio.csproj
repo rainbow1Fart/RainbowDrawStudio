@@ -150,6 +150,12 @@
     <Compile Include="MainForm\AccountManagerForm\AccountManagerControl.Designer.cs">
       <DependentUpon>AccountManagerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\PayRecordForm\PayRecordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\PayRecordForm\PayRecordControl.Designer.cs">
+      <DependentUpon>PayRecordControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\RecordStudentManagerForm\RecordStudentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\AccountManagerForm\AccountManagerControl.resx">
       <DependentUpon>AccountManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\PayRecordForm\PayRecordControl.resx">
+      <DependentUpon>PayRecordControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\RecordStudentManagerForm\RecordStudentUserControl.resx">
       <DependentUpon>RecordStudentUserControl.cs</DependentUpon>

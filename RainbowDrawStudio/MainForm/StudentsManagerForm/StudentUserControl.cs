@@ -136,7 +136,7 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
                 return;
             }
             //学生信息详细界面
-            DetailForm form = new DetailForm(stu, WindowsModel.Display);
+            DetailForm form = new DetailForm(stu, WindowsModel.Modify);
             DetailForm.OnWindowClosed += OnWindowClosed;
             form.Show();
         }

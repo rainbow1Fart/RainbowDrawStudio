@@ -83,6 +83,7 @@
             this.no_checkEdit.Properties.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("no_checkEdit.Properties.ImageOptions.ImageChecked")));
             this.no_checkEdit.Size = new System.Drawing.Size(75, 19);
             this.no_checkEdit.TabIndex = 25;
+            this.no_checkEdit.CheckedChanged += new System.EventHandler(this.no_checkEdit_CheckedChanged);
             // 
             // yes_checkEdit
             // 
@@ -92,6 +93,7 @@
             this.yes_checkEdit.Properties.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("yes_checkEdit.Properties.ImageOptions.ImageChecked")));
             this.yes_checkEdit.Size = new System.Drawing.Size(75, 19);
             this.yes_checkEdit.TabIndex = 24;
+            this.yes_checkEdit.CheckedChanged += new System.EventHandler(this.yes_checkEdit_CheckedChanged);
             // 
             // labelControl12
             // 
@@ -107,9 +109,9 @@
             this.labelControl11.Enabled = false;
             this.labelControl11.Location = new System.Drawing.Point(16, 138);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(48, 14);
+            this.labelControl11.Size = new System.Drawing.Size(55, 14);
             this.labelControl11.TabIndex = 19;
-            this.labelControl11.Text = "是否缴清";
+            this.labelControl11.Text = "*是否缴清";
             // 
             // notPay_textEdit
             // 
@@ -117,7 +119,6 @@
             this.notPay_textEdit.Name = "notPay_textEdit";
             this.notPay_textEdit.Properties.Mask.EditMask = "(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))";
             this.notPay_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.notPay_textEdit.Properties.Mask.PlaceHolder = '0';
             this.notPay_textEdit.Properties.MaxLength = 10;
             this.notPay_textEdit.Size = new System.Drawing.Size(190, 20);
             this.notPay_textEdit.TabIndex = 26;
@@ -172,9 +173,9 @@
             this.labelControl10.Enabled = false;
             this.labelControl10.Location = new System.Drawing.Point(16, 106);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(48, 14);
+            this.labelControl10.Size = new System.Drawing.Size(55, 14);
             this.labelControl10.TabIndex = 15;
-            this.labelControl10.Text = "追缴日期";
+            this.labelControl10.Text = "*追缴日期";
             // 
             // labelControl9
             // 
@@ -199,9 +200,9 @@
             this.labelControl7.Enabled = false;
             this.labelControl7.Location = new System.Drawing.Point(16, 10);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(36, 14);
+            this.labelControl7.Size = new System.Drawing.Size(48, 14);
             this.labelControl7.TabIndex = 14;
-            this.labelControl7.Text = "总学费";
+            this.labelControl7.Text = "已缴学费";
             // 
             // labelControl1
             // 
@@ -242,10 +243,11 @@
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.close_simpleButton);
             this.Controls.Add(this.ok_simpleButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "PayDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PayDetailForm";
+            this.Text = "学费信息";
             ((System.ComponentModel.ISupportInitialize)(this.no_checkEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yes_checkEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notPay_textEdit.Properties)).EndInit();

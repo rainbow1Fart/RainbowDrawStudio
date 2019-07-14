@@ -113,11 +113,13 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
                 : stu.LastPayDate.ToString();
             if (stu.Pay)
             {
-                no_checkEdit.Checked = true;
+                yes_checkEdit.Checked = true;
+                no_checkEdit.Checked = false;
             }
             else
             {
-                yes_checkEdit.Checked = true;
+                no_checkEdit.Checked = true;
+                yes_checkEdit.Checked = false;
             }
             notPay_textEdit.Text = stu.NotPay.ToString();
         }
@@ -150,21 +152,75 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
 
         private void updata_simpleButton_Click(object sender, EventArgs e)
         {
-            if (StudentInfo.CreateStudentInfo(GetWindowsText()) <= 0)
-            {
-                XtraMessageBox.Show("新建学生失败", "消息");
+            if (!FullChecked())
                 return;
+            if (_studentInfo.ID == 0)
+            {
+                if (StudentInfo.CreateStudentInfo(GetWindowsText(_studentInfo)) <= 0)
+                {
+                    XtraMessageBox.Show("新建学生失败", "消息");
+                    return;
+                }
+                else
+                {
+                    XtraMessageBox.Show("新建学生成功", "消息");
+                    this.Close();
+                }
             }
             else
             {
-                XtraMessageBox.Show("新建学生成功", "消息");
+                _studentInfo = GetWindowsText(_studentInfo);
+                if (StudentInfo.Updata(_studentInfo) <= 0)
+                {
+                    XtraMessageBox.Show("更新学生信息失败","消息");
+                    return;
+                }
+
+                XtraMessageBox.Show("更新学生信息成功", "消息");
                 this.Close();
             }
         }
 
-        protected StudentInfo GetWindowsText()
+        private bool FullChecked()
         {
-            StudentInfo stu = new StudentInfo();
+            if (yes_checkEdit.Checked && no_checkEdit.Checked)
+            {
+                XtraMessageBox.Show("请选择缴费状态！", "消息");
+                no_checkEdit.Checked = true;
+                return false;
+            }
+            if (string.IsNullOrEmpty(name_textEdit.Text.Trim()))
+            {
+                XtraMessageBox.Show("请填写学生姓名！", "消息");
+                name_textEdit.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(sn_textEdit.Text.Trim()))
+            {
+                XtraMessageBox.Show("学生编号不能为空！", "消息");
+                sn_textEdit.Focus();
+                return false;
+            }
+            if (no_checkEdit.Checked && yes_checkEdit.Checked)
+            {
+                XtraMessageBox.Show("请选择缴费状态", "消息");
+                no_checkEdit.Checked = true;
+                return false;
+            }
+            if (string.IsNullOrEmpty(last_dateEdit.Text.Trim()))
+            {
+                last_dateEdit.DateTime = DateTime.Today;
+                last_dateEdit.Focus();
+                XtraMessageBox.Show("请选择正确的追缴日期", "消息");
+                return false;
+            }
+
+            return true;
+        }
+
+        protected StudentInfo GetWindowsText(StudentInfo arg)
+        {
+            StudentInfo stu = arg;
             stu.SerialNum = sn_textEdit.Text.Trim();
             stu.Name = name_textEdit.Text.Trim();
             stu.Sex = sex_comboBoxEdit.Text.Trim();
@@ -198,13 +254,29 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
 
         private void update_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PayDetailForm form = new PayDetailForm(_studentInfo);
-            if(form.ShowDialog() == DialogResult.Yes)
-                this.Close();
+            PayDetailForm form = new PayDetailForm(_studentInfo, WindowsModel.Modify);
+            form.ShowDialog();
+            _studentInfo = form.Result;
+            SetWindwosText(_studentInfo);
+            Close();
+        }
+
+        private void yes_checkEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckEdit ce = sender as CheckEdit;
+            if (ce.Checked)
+                no_checkEdit.Checked = false;
             else
-            {
-                _studentInfo = form.Result;
-            }
+                no_checkEdit.Checked = true;
+        }
+
+        private void no_checkEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckEdit ce = sender as CheckEdit;
+            if (ce.Checked)
+                yes_checkEdit.Checked = false;
+            else
+                yes_checkEdit.Checked = true;
         }
     }
 }

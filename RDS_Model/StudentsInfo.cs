@@ -111,8 +111,10 @@ namespace RDS_Model
                 stu.NotPay = string.IsNullOrEmpty(reader["NotPay"].ToString())
                     ? 0
                     : decimal.Parse(reader["NotPay"].ToString());
-                if(string.IsNullOrEmpty(reader["LastPayDate"].ToString()))
+                if (string.IsNullOrEmpty(reader["LastPayDate"].ToString()))
                     stu.LastPayDate = new DateTime(1970,1,1);
+                else
+                    stu.LastPayDate = DateTime.Parse(reader["LastPayDate"].ToString());
                 students.Add(stu);
             }
             reader.Close();
@@ -210,7 +212,7 @@ namespace RDS_Model
         /// <returns></returns>
         public static int CreateStudentInfo(StudentInfo stu)
         {
-            string sql = string.Format("insert into StudentsTable values(NULL,'{0}','{1}','{2}','{3}','{4}','{5}',{6},{7},{8},{9},{10},{11}, {12})", stu.SerialNum,
+            string sql = string.Format("insert into StudentsTable values(NULL,'{0}','{1}','{2}','{3}','{4}','{5}',{6},{7},{8},{9},'{10}',{11}, {12})", stu.SerialNum,
                 stu.Name, stu.Sex, stu.Parents, stu.Contacts, stu.Address, stu.Tuition, stu.Remaining, stu.ClassHours,
                 stu.Pay ? 1 : 0, stu.LastPayDate.ToString("yyyy-MM-dd"), stu.NotPay, 0);
             return SQLiteControl.ExecuteNonQuery(sql);
@@ -218,9 +220,9 @@ namespace RDS_Model
 
         public static int Updata(StudentInfo stu)
         {
-            string sql = string.Format("update StudentsTable set Name='{0}', Sex='{1}',Parents='{2}',Contacts='{3}',Address='{4}',Tuition={5},Remaining={6},ClassHours={7},Pay={8},LastPayDate={9},NotPay={10}", stu.SerialNum,
+            string sql = string.Format("update StudentsTable set Name='{0}', Sex='{1}',Parents='{2}',Contacts='{3}',Address='{4}',Tuition={5},Remaining={6},ClassHours={7},Pay={8},LastPayDate='{9}',NotPay={10} where ID={11}",
                 stu.Name, stu.Sex, stu.Parents, stu.Contacts, stu.Address, stu.Tuition, stu.Remaining, stu.ClassHours,
-                stu.Pay ? 1 : 0, stu.LastPayDate.ToString("yyyy-MM-dd"), stu.NotPay);
+                stu.Pay ? 1 : 0, stu.LastPayDate.ToString("yyyy-MM-dd"), stu.NotPay,stu.ID);
             return SQLiteControl.ExecuteNonQuery(sql);
         }
     }

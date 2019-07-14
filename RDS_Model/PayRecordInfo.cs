@@ -40,6 +40,12 @@ namespace RDS_Model
         /// 操作人
         /// </summary>
         public string OperationPerson { get; set; }
+
+        /// <summary>
+        /// 操作日期
+        /// </summary>
+        public DateTime OperatonDate { get; set; }
+
         /// <summary>
         /// 备注信息
         /// </summary>
@@ -72,10 +78,10 @@ namespace RDS_Model
 
         public static int CreateRecord(PayRecordInfo payRecord)
         {
-            string sql = string.Format("insert into PayRecord values(NULL,{0},'{1},'{2},'{3}',{4},'{5}','{6}',{7},{8},{9},{10},{11})", payRecord.StudentID,
+            string sql = string.Format("insert into PayRecordTable values(NULL,{0},'{1}','{2}',{3},'{4}','{5}',{6},{7},{8},{9},{10},'{11}')", payRecord.StudentID,
                 payRecord.StudentName, payRecord.LastDateTime.ToString("yyyy-MM-dd"), payRecord.OperationID,
                 payRecord.OperationPerson, payRecord.Remark, payRecord.Tuition, payRecord.Remaining,
-                payRecord.ClassHours, payRecord.Pay ? 1 : 0, payRecord.NotPay);
+                payRecord.ClassHours, payRecord.Pay ? 1 : 0, payRecord.NotPay, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             return SQLiteControl.ExecuteNonQuery(sql);
         }
     }
