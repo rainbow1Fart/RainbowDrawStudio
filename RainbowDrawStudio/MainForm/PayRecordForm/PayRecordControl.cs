@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using RainbowDrawStudio.Public;
+using RDS_Controller;
 using RDS_Model;
 
 namespace RainbowDrawStudio.MainForm.PayRecordForm
@@ -71,6 +72,7 @@ namespace RainbowDrawStudio.MainForm.PayRecordForm
         private void query_simpleButton_Click(object sender, EventArgs e)
         {
             _pageIndex = 1;
+            _key = query_textEdit.Text.Trim();
             Query();
         }
 
@@ -114,12 +116,37 @@ namespace RainbowDrawStudio.MainForm.PayRecordForm
 
         private void delete_toolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (XtraMessageBox.Show("确认删除选中的缴费记录吗？删除后数据不可恢复，请谨慎操作。", "消息", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.No)
+                return;
+            VerificationForm form = new VerificationForm();
+            form.ShowDialog();
+            if (!form.Result)
+                return;
 
+            int[] selectRows = gridView1.GetSelectedRows();
+            int[] rowsID =new int[selectRows.Length];
+            for (int i = 0; i < selectRows.Length; i++)
+            {
+                rowsID[i] = (gridView1.GetRow(selectRows[i]) as PayRecordInfo).ID;
+            }
+            int result = SQLiteControl.RealyDelete("PayRecordTable", "ID", rowsID);
+            if (result <= 0)
+            {
+                XtraMessageBox.Show("删除选中的缴费记录失败", "消息", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                return;
+            }
+
+            Query();
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             _selectionRow = gridView1.FocusedRowHandle;
+            if (AccountInfo.AccountSession.Power != -1)
+                delete_toolStripMenuItem.Enabled = false;
+            else
+                delete_toolStripMenuItem.Enabled = true;
         }
     }
 }
