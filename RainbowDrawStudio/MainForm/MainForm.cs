@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using RDS_Model;
+using RainbowDrawStudio.MainForm.GroupClassForm;
 
 namespace RainbowDrawStudio.MainForm
 {
@@ -119,6 +120,24 @@ namespace RainbowDrawStudio.MainForm
                 }
                 PayRecordForm.PayRecordControl form = new PayRecordForm.PayRecordControl();
                 form.Parent = payRecord_navigationPage;
+                form.Dock = DockStyle.Fill;
+                form.Show();
+                return;
+            }
+            //班级&签到
+            if (main_navigationPane.SelectedPage == checkin_navigationPage)
+            {
+                foreach (Control child in checkin_navigationPage.Controls)
+                {
+                    GroupClassUserControl ctrl = child as GroupClassUserControl;
+                    if (ctrl != null)
+                    {
+                        ctrl.Visible = true;
+                        return;
+                    }
+                }
+                GroupClassUserControl form = new GroupClassUserControl();
+                form.Parent = checkin_navigationPage;
                 form.Dock = DockStyle.Fill;
                 form.Show();
                 return;

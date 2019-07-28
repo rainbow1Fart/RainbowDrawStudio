@@ -138,6 +138,24 @@
     <Compile Include="FogetAccountForm.Designer.cs">
       <DependentUpon>FogetAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\GroupClassForm\CreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\GroupClassForm\CreateForm.Designer.cs">
+      <DependentUpon>CreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\GroupClassForm\DetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\GroupClassForm\DetailForm.Designer.cs">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\GroupClassForm\GroupClassUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\GroupClassForm\GroupClassUserControl.Designer.cs">
+      <DependentUpon>GroupClassUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +230,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\GroupClassForm\CreateForm.resx">
+      <DependentUpon>CreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\GroupClassForm\DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\GroupClassForm\GroupClassUserControl.resx">
+      <DependentUpon>GroupClassUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

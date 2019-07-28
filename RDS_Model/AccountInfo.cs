@@ -197,6 +197,15 @@ namespace RDS_Model
             reader.Dispose();
             return accounts;
         }
+        public static List<AccountInfo> GetAll()
+        {
+            string sql = "select * from UsersTable where Power >= 0";
+            using (SQLiteDataReader reader = SQLiteControl.ExecuteReader(sql))
+            {
+                List<AccountInfo> accounts = Looper(reader);
+                return accounts;
+            }
+        }
 
         public static bool SimpleDelete(int[] id)
         {

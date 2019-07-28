@@ -79,6 +79,8 @@ namespace RDS_Model
         /// </summary>
         public DateTime LastPayDate { get; set; }
 
+        public bool Checkin { get; set; }
+
 
         public static List<StudentInfo> Looper(SQLiteDataReader reader)
         {

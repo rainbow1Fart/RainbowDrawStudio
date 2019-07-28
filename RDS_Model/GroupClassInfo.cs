@@ -79,6 +79,7 @@ namespace RDS_Model
 
             sql = string.Format(
                 "select * from GroupClassTable where (GroupName like '%{0}%' " +
+                "or ClassTeacher like '%{0}%') " +
                 "and (IsDelete is NULL or IsDelete = 0) " +
                 "limit {1} offset {2}",
                 key, pageSize, (pageIndex - 1) * pageSize);
@@ -96,7 +97,7 @@ namespace RDS_Model
         public static int CreateGroup(GroupClassInfo arg)
         {
             string sql =
-                string.Format("insert into GroupClassTable values(NULL, '{0}', '{1}','{2}','{3}',{4},'{5}', 0)",
+                string.Format("insert into GroupClassTable values(NULL, '{0}', '{1}','{2}','{3}','{4}', 0)",
                     arg.GroupName, arg.CreatePerson, arg.CreateDate.ToString("yyyy-MM-dd"), arg.PersonID,
                     arg.ClassTeacher);
             return SQLiteControl.ExecuteNonQuery(sql);
@@ -111,7 +112,7 @@ namespace RDS_Model
         {
             string sql =
                 string.Format(
-                    "update GroupClassTable set GroupName = '{0}', ClassTeacher = '{1}') where ID ={2}",
+                    "update GroupClassTable set GroupName = '{0}', ClassTeacher = '{1}' where ID ={2}",
                     arg.GroupName, arg.ClassTeacher, arg.ID);
             return SQLiteControl.ExecuteNonQuery(sql);
         }
