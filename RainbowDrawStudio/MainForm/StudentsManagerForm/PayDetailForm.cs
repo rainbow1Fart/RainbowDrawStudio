@@ -22,6 +22,13 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
             ViewInit(wm);
         }
 
+        public PayDetailForm(PayRecordInfo arg, WindowsModel wm)
+        {
+            InitializeComponent();
+            SetWindwosText(arg);
+            ViewInit(wm);
+        }
+
         public StudentInfo Result
         {
             get { return _studentInfo; }
@@ -118,6 +125,28 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
 
             notPay_textEdit.Text = stu.NotPay.ToString();
         }
+        protected void SetWindwosText(PayRecordInfo arg)
+        {
+            tuition_textEdit.Text = arg.Tuition.ToString();
+            classHours_textEdit.Text = arg.ClassHours.ToString();
+            remaining_textEdit.Text = arg.Remaining.ToString();
+            last_dateEdit.Text = DateTime.Compare(arg.LastDateTime, new DateTime(1970, 1, 1)) <= 0
+                ? string.Empty
+                : arg.LastDateTime.ToString();
+            if (arg.Pay)
+            {
+                yes_checkEdit.Checked = true;
+                no_checkEdit.Checked = false;
+            }
+            else
+            {
+                no_checkEdit.Checked = true;
+                yes_checkEdit.Checked = false;
+            }
+
+            notPay_textEdit.Text = arg.NotPay.ToString();
+            remark_memoEdit.Text = arg.Remark;
+        }
 
         private void ViewInit(WindowsModel wm)
         {
@@ -180,18 +209,35 @@ namespace RainbowDrawStudio.MainForm.StudentsManagerForm
         {
             CheckEdit ce = sender as CheckEdit;
             if (ce.Checked)
+            {
                 no_checkEdit.Checked = false;
+                notPay_textEdit.Text = "0";
+                notPay_textEdit.Properties.ReadOnly = true;
+
+            }
             else
+            {
                 no_checkEdit.Checked = true;
+                notPay_textEdit.Text = "0";
+                notPay_textEdit.Properties.ReadOnly = false;
+            }
         }
 
         private void no_checkEdit_CheckedChanged(object sender, EventArgs e)
         {
             CheckEdit ce = sender as CheckEdit;
             if (ce.Checked)
+            {
                 yes_checkEdit.Checked = false;
+                notPay_textEdit.Text = "0";
+                notPay_textEdit.Properties.ReadOnly = false;
+            }
             else
+            {
                 yes_checkEdit.Checked = true;
+                notPay_textEdit.Text = "0";
+                notPay_textEdit.Properties.ReadOnly = true;
+            }
         }
     }
 }

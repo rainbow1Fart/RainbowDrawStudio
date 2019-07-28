@@ -117,8 +117,10 @@
             // 
             this.notPay_textEdit.Location = new System.Drawing.Point(82, 167);
             this.notPay_textEdit.Name = "notPay_textEdit";
+            this.notPay_textEdit.Properties.Mask.BeepOnError = true;
             this.notPay_textEdit.Properties.Mask.EditMask = "(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))";
             this.notPay_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.notPay_textEdit.Properties.Mask.ShowPlaceHolders = false;
             this.notPay_textEdit.Properties.MaxLength = 10;
             this.notPay_textEdit.Size = new System.Drawing.Size(190, 20);
             this.notPay_textEdit.TabIndex = 26;
@@ -127,9 +129,11 @@
             // 
             this.tuition_textEdit.Location = new System.Drawing.Point(82, 7);
             this.tuition_textEdit.Name = "tuition_textEdit";
+            this.tuition_textEdit.Properties.Mask.BeepOnError = true;
             this.tuition_textEdit.Properties.Mask.EditMask = "(-?[0-9])+(.[0-9]{1,2})?";
             this.tuition_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.tuition_textEdit.Properties.Mask.PlaceHolder = '0';
+            this.tuition_textEdit.Properties.Mask.ShowPlaceHolders = false;
             this.tuition_textEdit.Properties.MaxLength = 10;
             this.tuition_textEdit.Size = new System.Drawing.Size(190, 20);
             this.tuition_textEdit.TabIndex = 20;
@@ -138,9 +142,11 @@
             // 
             this.classHours_textEdit.Location = new System.Drawing.Point(82, 39);
             this.classHours_textEdit.Name = "classHours_textEdit";
+            this.classHours_textEdit.Properties.Mask.BeepOnError = true;
             this.classHours_textEdit.Properties.Mask.EditMask = "-?\\d+";
             this.classHours_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.classHours_textEdit.Properties.Mask.PlaceHolder = '0';
+            this.classHours_textEdit.Properties.Mask.ShowPlaceHolders = false;
             this.classHours_textEdit.Properties.MaxLength = 10;
             this.classHours_textEdit.Size = new System.Drawing.Size(190, 20);
             this.classHours_textEdit.TabIndex = 21;
@@ -149,9 +155,11 @@
             // 
             this.remaining_textEdit.Location = new System.Drawing.Point(82, 71);
             this.remaining_textEdit.Name = "remaining_textEdit";
+            this.remaining_textEdit.Properties.Mask.BeepOnError = true;
             this.remaining_textEdit.Properties.Mask.EditMask = "-?\\d+";
             this.remaining_textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.remaining_textEdit.Properties.Mask.PlaceHolder = '0';
+            this.remaining_textEdit.Properties.Mask.ShowPlaceHolders = false;
             this.remaining_textEdit.Properties.MaxLength = 10;
             this.remaining_textEdit.Size = new System.Drawing.Size(190, 20);
             this.remaining_textEdit.TabIndex = 22;

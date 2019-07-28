@@ -149,6 +149,16 @@ namespace RDS_Model
         }
 
         /// <summary>
+        /// 根据ID去查询学生信息
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public static StudentInfo QueryFromID(int ID)
+        {
+            return Looper((SQLiteControl.QueryFromID("StudentsTable", "ID", ID)))[0];
+        }
+
+        /// <summary>
         /// 查询被删除的学生信息
         /// </summary>
         /// <param name="pageIndex"></param>

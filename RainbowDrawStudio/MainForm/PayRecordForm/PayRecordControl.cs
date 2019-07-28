@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using RainbowDrawStudio.MainForm.StudentsManagerForm;
 using RainbowDrawStudio.Public;
 using RDS_Controller;
 using RDS_Model;
@@ -147,6 +148,30 @@ namespace RainbowDrawStudio.MainForm.PayRecordForm
                 delete_toolStripMenuItem.Enabled = false;
             else
                 delete_toolStripMenuItem.Enabled = true;
+        }
+
+        private void watch_toolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PayRecordInfo arg = gridView1.GetRow(gridView1.FocusedRowHandle) as PayRecordInfo;
+            if (arg == null)
+            {
+                XtraMessageBox.Show("选中的信息错误，请刷新后重试", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            PayDetailForm form = new PayDetailForm(arg, WindowsModel.Display);
+            form.Show();
+        }
+
+        private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            PayRecordInfo arg = gridView1.GetRow(gridView1.FocusedRowHandle) as PayRecordInfo;
+            if (arg == null)
+            {
+                XtraMessageBox.Show("选中的信息错误，请刷新后重试", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            PayDetailForm form = new PayDetailForm(arg, WindowsModel.Display);
+            form.Show();
         }
     }
 }

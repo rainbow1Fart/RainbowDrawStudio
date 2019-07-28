@@ -140,7 +140,7 @@ namespace RDS_Controller
         }
 
         /// <summary>
-        /// 按指定的表名去修改指定Id列里IsDelete的值
+        /// 按指定的表名去恢复指定Id列里IsDelete的值
         /// </summary>
         /// <param name="tableName">表名</param>
         /// <param name="idColName">ID列名</param>
@@ -184,6 +184,12 @@ namespace RDS_Controller
 
             sql += ")";
             return SQLiteControl.ExecuteNonQuery(sql);
+        }
+
+        public static SQLiteDataReader QueryFromID(string tableName, string colName, int ID)
+        {
+            string sql = string.Format("select * from {0} where {1} = {2}", tableName, colName, ID);
+            return ExecuteReader(sql);
         }
 
     }
