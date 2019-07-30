@@ -59,6 +59,7 @@
             // 
             // ok_simpleButton
             // 
+            this.ok_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ok_simpleButton.ImageOptions.Image")));
             this.ok_simpleButton.Location = new System.Drawing.Point(12, 266);
             this.ok_simpleButton.Name = "ok_simpleButton";
             this.ok_simpleButton.Size = new System.Drawing.Size(75, 23);
@@ -68,6 +69,7 @@
             // 
             // close_simpleButton
             // 
+            this.close_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("close_simpleButton.ImageOptions.Image")));
             this.close_simpleButton.Location = new System.Drawing.Point(197, 266);
             this.close_simpleButton.Name = "close_simpleButton";
             this.close_simpleButton.Size = new System.Drawing.Size(75, 23);

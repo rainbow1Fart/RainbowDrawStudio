@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateForm));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.className_textEdit = new DevExpress.XtraEditors.TextEdit();
@@ -64,6 +65,7 @@
             // 
             // ok_simpleButton
             // 
+            this.ok_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ok_simpleButton.ImageOptions.Image")));
             this.ok_simpleButton.Location = new System.Drawing.Point(385, 8);
             this.ok_simpleButton.Name = "ok_simpleButton";
             this.ok_simpleButton.Size = new System.Drawing.Size(75, 23);
@@ -73,6 +75,7 @@
             // 
             // cloase_simpleButton
             // 
+            this.cloase_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cloase_simpleButton.ImageOptions.Image")));
             this.cloase_simpleButton.Location = new System.Drawing.Point(385, 49);
             this.cloase_simpleButton.Name = "cloase_simpleButton";
             this.cloase_simpleButton.Size = new System.Drawing.Size(75, 23);
@@ -82,6 +85,7 @@
             // 
             // edit_simpleButton
             // 
+            this.edit_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("edit_simpleButton.ImageOptions.Image")));
             this.edit_simpleButton.Location = new System.Drawing.Point(306, 8);
             this.edit_simpleButton.Name = "edit_simpleButton";
             this.edit_simpleButton.Size = new System.Drawing.Size(75, 23);

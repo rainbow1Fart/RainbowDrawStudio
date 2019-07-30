@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.title_label = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.remember_checkEdit = new DevExpress.XtraEditors.CheckEdit();
@@ -72,7 +73,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(404, 261);
+            this.panelControl1.Size = new System.Drawing.Size(404, 236);
             this.panelControl1.TabIndex = 1;
             // 
             // remember_checkEdit
@@ -107,20 +108,26 @@
             // 
             // exit_simpleButton
             // 
-            this.exit_simpleButton.Location = new System.Drawing.Point(227, 226);
+            this.exit_simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.exit_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("exit_simpleButton.ImageOptions.Image")));
+            this.exit_simpleButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.exit_simpleButton.Location = new System.Drawing.Point(277, 194);
             this.exit_simpleButton.Name = "exit_simpleButton";
-            this.exit_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.exit_simpleButton.Size = new System.Drawing.Size(25, 25);
             this.exit_simpleButton.TabIndex = 5;
-            this.exit_simpleButton.Text = "退出";
+            this.exit_simpleButton.Text = "退出(&C)";
             this.exit_simpleButton.Click += new System.EventHandler(this.exit_simpleButton_Click);
             // 
             // login_simpleButton
             // 
-            this.login_simpleButton.Location = new System.Drawing.Point(102, 226);
+            this.login_simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.login_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("login_simpleButton.ImageOptions.Image")));
+            this.login_simpleButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.login_simpleButton.Location = new System.Drawing.Point(233, 194);
             this.login_simpleButton.Name = "login_simpleButton";
-            this.login_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.login_simpleButton.Size = new System.Drawing.Size(25, 25);
             this.login_simpleButton.TabIndex = 3;
-            this.login_simpleButton.Text = "登录";
+            this.login_simpleButton.Text = "登录(&O)";
             this.login_simpleButton.Click += new System.EventHandler(this.login_simpleButton_Click);
             // 
             // password_textEdit
@@ -164,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 261);
+            this.ClientSize = new System.Drawing.Size(404, 236);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

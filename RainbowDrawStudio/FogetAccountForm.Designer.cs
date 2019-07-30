@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FogetAccountForm));
             this.key_textEdit = new DevExpress.XtraEditors.TextEdit();
             this.pwdAgain_textEdit = new DevExpress.XtraEditors.TextEdit();
             this.password_textEdit = new DevExpress.XtraEditors.TextEdit();
@@ -126,18 +127,24 @@
             // 
             // ok_simpleButton
             // 
-            this.ok_simpleButton.Location = new System.Drawing.Point(43, 134);
+            this.ok_simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.ok_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ok_simpleButton.ImageOptions.Image")));
+            this.ok_simpleButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.ok_simpleButton.Location = new System.Drawing.Point(312, 132);
             this.ok_simpleButton.Name = "ok_simpleButton";
-            this.ok_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.ok_simpleButton.Size = new System.Drawing.Size(25, 25);
             this.ok_simpleButton.TabIndex = 5;
             this.ok_simpleButton.Text = "确定(&O)";
             this.ok_simpleButton.Click += new System.EventHandler(this.ok_simpleButton_Click);
             // 
             // close_simpleButton
             // 
-            this.close_simpleButton.Location = new System.Drawing.Point(160, 134);
+            this.close_simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.close_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("close_simpleButton.ImageOptions.Image")));
+            this.close_simpleButton.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.close_simpleButton.Location = new System.Drawing.Point(352, 132);
             this.close_simpleButton.Name = "close_simpleButton";
-            this.close_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.close_simpleButton.Size = new System.Drawing.Size(25, 25);
             this.close_simpleButton.TabIndex = 6;
             this.close_simpleButton.Text = "关闭(&C)";
             this.close_simpleButton.Click += new System.EventHandler(this.close_simpleButton_Click);

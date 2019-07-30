@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -105,20 +106,22 @@
             // 
             // register_simpleButton
             // 
-            this.register_simpleButton.Location = new System.Drawing.Point(64, 226);
+            this.register_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("register_simpleButton.ImageOptions.Image")));
+            this.register_simpleButton.Location = new System.Drawing.Point(114, 224);
             this.register_simpleButton.Name = "register_simpleButton";
-            this.register_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.register_simpleButton.Size = new System.Drawing.Size(75, 25);
             this.register_simpleButton.TabIndex = 7;
-            this.register_simpleButton.Text = "注册";
+            this.register_simpleButton.Text = "注册(&R)";
             this.register_simpleButton.Click += new System.EventHandler(this.register_simpleButton_Click);
             // 
             // close_simpleButton
             // 
-            this.close_simpleButton.Location = new System.Drawing.Point(232, 226);
+            this.close_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("close_simpleButton.ImageOptions.Image")));
+            this.close_simpleButton.Location = new System.Drawing.Point(282, 224);
             this.close_simpleButton.Name = "close_simpleButton";
-            this.close_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.close_simpleButton.Size = new System.Drawing.Size(75, 25);
             this.close_simpleButton.TabIndex = 8;
-            this.close_simpleButton.Text = "关闭";
+            this.close_simpleButton.Text = "关闭(&C)";
             this.close_simpleButton.Click += new System.EventHandler(this.close_simpleButton_Click);
             // 
             // person_textEdit
@@ -269,11 +272,12 @@
             // 
             // edite_simpleButton
             // 
-            this.edite_simpleButton.Location = new System.Drawing.Point(145, 226);
+            this.edite_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("edite_simpleButton.ImageOptions.Image")));
+            this.edite_simpleButton.Location = new System.Drawing.Point(195, 224);
             this.edite_simpleButton.Name = "edite_simpleButton";
-            this.edite_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.edite_simpleButton.Size = new System.Drawing.Size(75, 25);
             this.edite_simpleButton.TabIndex = 7;
-            this.edite_simpleButton.Text = "修改";
+            this.edite_simpleButton.Text = "修改(&M)";
             this.edite_simpleButton.Visible = false;
             this.edite_simpleButton.Click += new System.EventHandler(this.edite_simpleButton_Click);
             // 
@@ -281,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 270);
+            this.ClientSize = new System.Drawing.Size(426, 259);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.labelControl11);

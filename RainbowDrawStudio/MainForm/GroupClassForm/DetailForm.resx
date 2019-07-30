@@ -128,4 +128,33 @@
         GdojY7mKfcmLeRVoYWFnJiwuaM3A/+TuA3z+LAyTGFNzAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="checkin_simpleButton.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAIHRFWHRUaXRsZQBFZGl0O0Jh
+        cnM7UmliYm9uO1N0YW5kYXJkOzATw9sAAACeSURBVDhPrZFRDYAwDESRgBAkTBQKSDCGFpyUO9KSdrBm
+        BD4ebLveIwuDiHwibEopkrAAzoRO2LjhFqfEd1iawa7vCXDw/JIjSGoByxaaJBOQS8KQpRCCEWQCdFXA
+        Bw6eJF7guQtUslqotCRNAXmU2IzOpQLe3UtWy91cKtiASQjPwm/DPhUwpMTOeAUsOwSkDmuQ9Ql6sM6/
+        gvfIcADYzg7G/kb0ygAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="update_simpleButton.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAGHRFWHRUaXRsZQBVcGRhdGVU
+        YWJsZTtUYWJsZTvoyHkmAAAAh0lEQVQ4T2P4//8/RRjOMDY2/k8iBumhjQFgCTyYKANgbLhCJDaK+Ahz
+        AUwdOxBbwsSIdQErEFsA8QIg/gClQXySXADS1A/E8lAaxN9HrAvQMciQ30AM0UzAAJCfYXL7oGIgGiyG
+        zQAUjCQHshFkM8xgMCZoABCDQhxkI7YwQDGAEMYSC8asAJfScWoNBPwYAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="add_simpleButton.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAG3RFWHRUaXRsZQBBZGQ7UGx1
+        cztCYXJzO1JpYmJvbjuVBjMvAAAAmElEQVQ4T6WT0Q2AIAxEGcVB+GY6mcJhWIfEAbSP2ARMwZh+vER7
+        18MChhjjmyRkoQj1gWdqaIO/f9mEXTiFawIaHrxDAIVDsJos8LYQDSDVMq6gpwUw1+yzdQFLoychsjmW
+        AVYBkBHZYUuEr4CCyDH1RW2a0XsrBXeAewT3JrqPEVwXCdxXWUNInY0DaHhaM/QByo/fOYYbGUVfXCQ4
+        ecoAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

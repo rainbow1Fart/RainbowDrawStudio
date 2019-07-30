@@ -90,7 +90,7 @@
             this.query_simpleButton.Appearance.Options.UseForeColor = true;
             this.query_simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.query_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("query_simpleButton.ImageOptions.Image")));
-            this.query_simpleButton.Location = new System.Drawing.Point(273, 12);
+            this.query_simpleButton.Location = new System.Drawing.Point(276, 12);
             this.query_simpleButton.Name = "query_simpleButton";
             this.query_simpleButton.Size = new System.Drawing.Size(25, 20);
             this.query_simpleButton.TabIndex = 1;

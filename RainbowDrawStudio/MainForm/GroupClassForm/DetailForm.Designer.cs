@@ -30,45 +30,45 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailForm));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.create_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.classTeacher_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
             this.splitContainerControl4 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.query_textEdit = new DevExpress.XtraEditors.TextEdit();
             this.query_simpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.add_simpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.update_simpleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.checkin_simpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.query_textEdit = new DevExpress.XtraEditors.TextEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.checkin_simpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.update_simpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.add_simpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.classTeacher_textEdit = new DevExpress.XtraEditors.TextEdit();
-            this.create_textEdit = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.create_textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classTeacher_textEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
-            this.splitContainerControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl4)).BeginInit();
             this.splitContainerControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.query_textEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
+            this.splitContainerControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classTeacher_textEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.create_textEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -90,6 +90,50 @@
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
+            // create_textEdit
+            // 
+            this.create_textEdit.Location = new System.Drawing.Point(430, 41);
+            this.create_textEdit.Name = "create_textEdit";
+            this.create_textEdit.Properties.ReadOnly = true;
+            this.create_textEdit.Size = new System.Drawing.Size(100, 20);
+            this.create_textEdit.TabIndex = 1;
+            // 
+            // classTeacher_textEdit
+            // 
+            this.classTeacher_textEdit.Location = new System.Drawing.Point(270, 41);
+            this.classTeacher_textEdit.Name = "classTeacher_textEdit";
+            this.classTeacher_textEdit.Properties.ReadOnly = true;
+            this.classTeacher_textEdit.Size = new System.Drawing.Size(100, 20);
+            this.classTeacher_textEdit.TabIndex = 1;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Enabled = false;
+            this.labelControl3.Location = new System.Drawing.Point(376, 44);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(48, 14);
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "创建日期";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Enabled = false;
+            this.labelControl2.Location = new System.Drawing.Point(228, 44);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(36, 14);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "班主任";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(329, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(104, 16);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "labelControl1";
+            // 
             // splitContainerControl2
             // 
             this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -103,23 +147,6 @@
             this.splitContainerControl2.SplitterPosition = 387;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
-            // 
-            // splitContainerControl3
-            // 
-            this.splitContainerControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl3.Horizontal = false;
-            this.splitContainerControl3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl3.Name = "splitContainerControl3";
-            this.splitContainerControl3.Panel1.Controls.Add(this.checkin_simpleButton);
-            this.splitContainerControl3.Panel1.Controls.Add(this.update_simpleButton);
-            this.splitContainerControl3.Panel1.Controls.Add(this.add_simpleButton);
-            this.splitContainerControl3.Panel1.Text = "Panel1";
-            this.splitContainerControl3.Panel2.Controls.Add(this.gridControl2);
-            this.splitContainerControl3.Panel2.Text = "Panel2";
-            this.splitContainerControl3.Size = new System.Drawing.Size(350, 218);
-            this.splitContainerControl3.SplitterPosition = 34;
-            this.splitContainerControl3.TabIndex = 0;
-            this.splitContainerControl3.Text = "splitContainerControl3";
             // 
             // splitContainerControl4
             // 
@@ -137,14 +164,6 @@
             this.splitContainerControl4.TabIndex = 0;
             this.splitContainerControl4.Text = "splitContainerControl3";
             // 
-            // query_textEdit
-            // 
-            this.query_textEdit.Location = new System.Drawing.Point(12, 6);
-            this.query_textEdit.Name = "query_textEdit";
-            this.query_textEdit.Size = new System.Drawing.Size(285, 20);
-            this.query_textEdit.TabIndex = 0;
-            this.query_textEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.query_textEdit_KeyPress);
-            // 
             // query_simpleButton
             // 
             this.query_simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -154,29 +173,13 @@
             this.query_simpleButton.Size = new System.Drawing.Size(20, 20);
             this.query_simpleButton.TabIndex = 2;
             // 
-            // add_simpleButton
+            // query_textEdit
             // 
-            this.add_simpleButton.Location = new System.Drawing.Point(3, 5);
-            this.add_simpleButton.Name = "add_simpleButton";
-            this.add_simpleButton.Size = new System.Drawing.Size(75, 23);
-            this.add_simpleButton.TabIndex = 0;
-            this.add_simpleButton.Text = "新建(&N)";
-            // 
-            // update_simpleButton
-            // 
-            this.update_simpleButton.Location = new System.Drawing.Point(84, 5);
-            this.update_simpleButton.Name = "update_simpleButton";
-            this.update_simpleButton.Size = new System.Drawing.Size(75, 23);
-            this.update_simpleButton.TabIndex = 0;
-            this.update_simpleButton.Text = "更新(&U)";
-            // 
-            // checkin_simpleButton
-            // 
-            this.checkin_simpleButton.Location = new System.Drawing.Point(165, 5);
-            this.checkin_simpleButton.Name = "checkin_simpleButton";
-            this.checkin_simpleButton.Size = new System.Drawing.Size(75, 23);
-            this.checkin_simpleButton.TabIndex = 0;
-            this.checkin_simpleButton.Text = "签到(&K)";
+            this.query_textEdit.Location = new System.Drawing.Point(12, 6);
+            this.query_textEdit.Name = "query_textEdit";
+            this.query_textEdit.Size = new System.Drawing.Size(285, 20);
+            this.query_textEdit.TabIndex = 0;
+            this.query_textEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.query_textEdit_KeyPress);
             // 
             // gridControl1
             // 
@@ -256,6 +259,50 @@
             this.gridColumn3.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
+            // 
+            // splitContainerControl3
+            // 
+            this.splitContainerControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl3.Horizontal = false;
+            this.splitContainerControl3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl3.Name = "splitContainerControl3";
+            this.splitContainerControl3.Panel1.Controls.Add(this.checkin_simpleButton);
+            this.splitContainerControl3.Panel1.Controls.Add(this.update_simpleButton);
+            this.splitContainerControl3.Panel1.Controls.Add(this.add_simpleButton);
+            this.splitContainerControl3.Panel1.Text = "Panel1";
+            this.splitContainerControl3.Panel2.Controls.Add(this.gridControl2);
+            this.splitContainerControl3.Panel2.Text = "Panel2";
+            this.splitContainerControl3.Size = new System.Drawing.Size(350, 218);
+            this.splitContainerControl3.SplitterPosition = 34;
+            this.splitContainerControl3.TabIndex = 0;
+            this.splitContainerControl3.Text = "splitContainerControl3";
+            // 
+            // checkin_simpleButton
+            // 
+            this.checkin_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("checkin_simpleButton.ImageOptions.Image")));
+            this.checkin_simpleButton.Location = new System.Drawing.Point(165, 5);
+            this.checkin_simpleButton.Name = "checkin_simpleButton";
+            this.checkin_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.checkin_simpleButton.TabIndex = 0;
+            this.checkin_simpleButton.Text = "签到(&K)";
+            // 
+            // update_simpleButton
+            // 
+            this.update_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("update_simpleButton.ImageOptions.Image")));
+            this.update_simpleButton.Location = new System.Drawing.Point(84, 5);
+            this.update_simpleButton.Name = "update_simpleButton";
+            this.update_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.update_simpleButton.TabIndex = 0;
+            this.update_simpleButton.Text = "更新(&U)";
+            // 
+            // add_simpleButton
+            // 
+            this.add_simpleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("add_simpleButton.ImageOptions.Image")));
+            this.add_simpleButton.Location = new System.Drawing.Point(3, 5);
+            this.add_simpleButton.Name = "add_simpleButton";
+            this.add_simpleButton.Size = new System.Drawing.Size(75, 23);
+            this.add_simpleButton.TabIndex = 0;
+            this.add_simpleButton.Text = "新建(&N)";
             // 
             // gridControl2
             // 
@@ -347,50 +394,6 @@
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("华文中宋", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(329, 12);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(104, 16);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "labelControl1";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Enabled = false;
-            this.labelControl2.Location = new System.Drawing.Point(228, 44);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(36, 14);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "班主任";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Enabled = false;
-            this.labelControl3.Location = new System.Drawing.Point(376, 44);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(48, 14);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "创建日期";
-            // 
-            // classTeacher_textEdit
-            // 
-            this.classTeacher_textEdit.Location = new System.Drawing.Point(270, 41);
-            this.classTeacher_textEdit.Name = "classTeacher_textEdit";
-            this.classTeacher_textEdit.Properties.ReadOnly = true;
-            this.classTeacher_textEdit.Size = new System.Drawing.Size(100, 20);
-            this.classTeacher_textEdit.TabIndex = 1;
-            // 
-            // create_textEdit
-            // 
-            this.create_textEdit.Location = new System.Drawing.Point(430, 41);
-            this.create_textEdit.Name = "create_textEdit";
-            this.create_textEdit.Properties.ReadOnly = true;
-            this.create_textEdit.Size = new System.Drawing.Size(100, 20);
-            this.create_textEdit.TabIndex = 1;
-            // 
             // DetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -402,19 +405,19 @@
             this.SizeChanged += new System.EventHandler(this.DetailForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.create_textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classTeacher_textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).EndInit();
-            this.splitContainerControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl4)).EndInit();
             this.splitContainerControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.query_textEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).EndInit();
+            this.splitContainerControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classTeacher_textEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.create_textEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
