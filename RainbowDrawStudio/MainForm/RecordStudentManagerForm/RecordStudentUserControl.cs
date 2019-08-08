@@ -18,20 +18,17 @@ namespace RainbowDrawStudio.MainForm.RecordStudentManagerForm
         private int _pageIndex;
         private int _pageSize;
         private int _pageTotal;
-        private int _selectionRow;
         private string _key;
-        private int _selectRow;
 
         public RecordStudentUserControl()
         {
             InitializeComponent();
             _key = string.Empty;
-            _selectionRow = 0;
             _page = new PageControl();
             _pageIndex = _page.PageIndex;
             _pageSize = _page.PageSize;
             _pageTotal = _page.PageTotal;
-            _selectRow = 0;
+
             _page.Parent = splitContainer1.Panel2;
             _page.Dock = DockStyle.Fill;
             _page.PageChanged += Page_PageChanged;

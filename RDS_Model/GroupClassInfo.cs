@@ -153,42 +153,6 @@ namespace RDS_Model
         }
 
         /// <summary>
-        /// 为小组添加成员
-        /// </summary>
-        /// <returns></returns>
-        public static int AddMembers(int GroupID, int[] StudentsID)
-        {
-            if (StudentsID.Length <= 0)
-                return -1;
-            string sql = string.Format("insert into StudentCheckinTable values(NULL, {0}, {1}", GroupID, StudentsID[0]);
-            for (int i = 1; i < StudentsID.Length; i++)
-            {
-                sql += string.Format("),(NULL, {0}, {1}", GroupID, StudentsID[i]);
-            }
-
-            sql += ")";
-
-            return SQLiteControl.ExecuteNonQuery(sql);
-        }
-
-        /// <summary>
-        /// 变更小组成员
-        /// </summary>
-        /// <param name="GroupID"></param>
-        /// <param name="StudentsID"></param>
-        /// <returns></returns>
-        public static int ModifyMembers(int ID, int[] StudentsID)
-        {
-            if (StudentsID.Length <= 0)
-                return -1;
-            string sql = string.Format("update StudentsCheckinTable set StudentID={0} where ID={1}", StudentsID[0], ID);
-
-            sql += ")";
-
-            return SQLiteControl.ExecuteNonQuery(sql);
-        }
-
-        /// <summary>
         /// 签到
         /// </summary>
         /// <returns></returns>

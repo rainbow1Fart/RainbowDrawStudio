@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountInfo.cs" />
+    <Compile Include="CheckinInfo.cs" />
+    <Compile Include="CheckinRecordInfo.cs" />
     <Compile Include="GroupClassInfo.cs" />
     <Compile Include="PayRecordInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

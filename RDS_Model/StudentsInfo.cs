@@ -237,5 +237,20 @@ namespace RDS_Model
                 stu.Pay ? 1 : 0, stu.LastPayDate.ToString("yyyy-MM-dd"), stu.NotPay,stu.ID);
             return SQLiteControl.ExecuteNonQuery(sql);
         }
+
+        /// <summary>
+        /// 重写Equals，判断当ID相等时就认为是相同的
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {
+            StudentInfo m = obj as StudentInfo;
+            if (this.ID == m.ID)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

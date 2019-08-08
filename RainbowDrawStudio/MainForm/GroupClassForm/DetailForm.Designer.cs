@@ -54,6 +54,7 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.create_textEdit.Properties)).BeginInit();
@@ -152,10 +153,12 @@
             // 
             this.splitContainerControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl4.Horizontal = false;
+            this.splitContainerControl4.IsSplitterFixed = true;
             this.splitContainerControl4.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl4.Name = "splitContainerControl4";
             this.splitContainerControl4.Panel1.Controls.Add(this.query_simpleButton);
             this.splitContainerControl4.Panel1.Controls.Add(this.query_textEdit);
+            this.splitContainerControl4.Panel1.MinSize = 32;
             this.splitContainerControl4.Panel1.Text = "Panel1";
             this.splitContainerControl4.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl4.Panel2.Text = "Panel2";
@@ -172,6 +175,8 @@
             this.query_simpleButton.Name = "query_simpleButton";
             this.query_simpleButton.Size = new System.Drawing.Size(20, 20);
             this.query_simpleButton.TabIndex = 2;
+            this.query_simpleButton.Click += new System.EventHandler(this.query_simpleButton_Click);
+            this.query_simpleButton.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.query_simpleButton_KeyPress);
             // 
             // query_textEdit
             // 
@@ -187,10 +192,11 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(387, 183);
+            this.gridControl1.Size = new System.Drawing.Size(387, 181);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gridControl1_MouseDoubleClick);
             // 
             // gridView1
             // 
@@ -224,6 +230,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsColumn.AllowMove = false;
+            this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn1.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
@@ -239,6 +246,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsColumn.AllowMove = false;
+            this.gridColumn2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn2.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
@@ -254,6 +262,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsColumn.AllowMove = false;
+            this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn3.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
@@ -264,11 +273,13 @@
             // 
             this.splitContainerControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl3.Horizontal = false;
+            this.splitContainerControl3.IsSplitterFixed = true;
             this.splitContainerControl3.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl3.Name = "splitContainerControl3";
             this.splitContainerControl3.Panel1.Controls.Add(this.checkin_simpleButton);
             this.splitContainerControl3.Panel1.Controls.Add(this.update_simpleButton);
             this.splitContainerControl3.Panel1.Controls.Add(this.add_simpleButton);
+            this.splitContainerControl3.Panel1.MinSize = 32;
             this.splitContainerControl3.Panel1.Text = "Panel1";
             this.splitContainerControl3.Panel2.Controls.Add(this.gridControl2);
             this.splitContainerControl3.Panel2.Text = "Panel2";
@@ -285,6 +296,7 @@
             this.checkin_simpleButton.Size = new System.Drawing.Size(75, 23);
             this.checkin_simpleButton.TabIndex = 0;
             this.checkin_simpleButton.Text = "签到(&K)";
+            this.checkin_simpleButton.Click += new System.EventHandler(this.checkin_simpleButton_Click);
             // 
             // update_simpleButton
             // 
@@ -294,6 +306,7 @@
             this.update_simpleButton.Size = new System.Drawing.Size(75, 23);
             this.update_simpleButton.TabIndex = 0;
             this.update_simpleButton.Text = "更新(&U)";
+            this.update_simpleButton.Click += new System.EventHandler(this.update_simpleButton_Click);
             // 
             // add_simpleButton
             // 
@@ -303,6 +316,7 @@
             this.add_simpleButton.Size = new System.Drawing.Size(75, 23);
             this.add_simpleButton.TabIndex = 0;
             this.add_simpleButton.Text = "新建(&N)";
+            this.add_simpleButton.Click += new System.EventHandler(this.add_simpleButton_Click);
             // 
             // gridControl2
             // 
@@ -314,6 +328,7 @@
             this.gridControl2.TabIndex = 3;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gridControl2_MouseDoubleClick);
             // 
             // gridView2
             // 
@@ -326,6 +341,7 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
+            this.gridColumn9,
             this.gridColumn7});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
@@ -348,6 +364,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.AllowMove = false;
+            this.gridColumn4.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn4.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn4.OptionsFilter.AllowFilter = false;
             this.gridColumn4.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
@@ -363,6 +380,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsColumn.AllowMove = false;
+            this.gridColumn5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn5.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn5.OptionsFilter.AllowFilter = false;
             this.gridColumn5.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
@@ -378,6 +396,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.OptionsColumn.AllowMove = false;
+            this.gridColumn6.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn6.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn6.OptionsFilter.AllowFilter = false;
             this.gridColumn6.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
@@ -389,10 +408,25 @@
             this.gridColumn7.Caption = "签到";
             this.gridColumn7.FieldName = "Checkin";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowMove = false;
+            this.gridColumn7.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn7.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn7.OptionsFilter.AllowFilter = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "剩余课时";
+            this.gridColumn9.FieldName = "Remaining";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            this.gridColumn9.OptionsColumn.AllowMove = false;
+            this.gridColumn9.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumn9.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn9.OptionsFilter.AllowFilter = false;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 3;
             // 
             // DetailForm
             // 
@@ -401,6 +435,7 @@
             this.ClientSize = new System.Drawing.Size(742, 297);
             this.Controls.Add(this.splitContainerControl1);
             this.Name = "DetailForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetailForm";
             this.SizeChanged += new System.EventHandler(this.DetailForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
@@ -449,5 +484,6 @@
         private DevExpress.XtraEditors.TextEdit classTeacher_textEdit;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }
