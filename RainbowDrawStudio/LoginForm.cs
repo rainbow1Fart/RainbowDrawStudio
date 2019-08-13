@@ -36,7 +36,6 @@ namespace RainbowDrawStudio
             if (!File.Exists(@"./DataBase/" + DateTime.Today.ToString("yyyy-MM-dd") + ".sqlite"))
             {
                 file = file.CopyTo(@"./DataBase/" + DateTime.Today.ToString("yyyy-MM-dd") + ".sqlite");
-                file.Encrypt();
             }
             //解密文件
             //else
@@ -73,6 +72,8 @@ namespace RainbowDrawStudio
         /// <param name="e"></param>
         private void password_textEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar != 13)
+                return;
             if (string.IsNullOrEmpty(account_textEdit.Text.Trim()))
             {
                 XtraMessageBox.Show("请输入账号！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
