@@ -152,13 +152,5 @@ namespace RDS_Model
             return result;
         }
 
-        /// <summary>
-        /// 签到
-        /// </summary>
-        /// <returns></returns>
-        public static int Checkin(int[] studentsID)
-        {
-            return 0;
-        }
     }
 }

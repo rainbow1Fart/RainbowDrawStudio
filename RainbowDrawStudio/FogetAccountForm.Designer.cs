@@ -208,6 +208,7 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FogetAccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "忘记密码";

@@ -140,7 +140,28 @@ namespace RainbowDrawStudio.MainForm.GroupClassForm
 
         private void oneKey_toolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            GroupClassInfo arg = gridView1.GetRow(gridView1.FocusedRowHandle) as GroupClassInfo;
+            if (arg == null)
+            {
+                XtraMessageBox.Show("所选数据错误，请刷新后重试", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            //获取小组里所有的成员
+            List<CheckinInfo> results = CheckinInfo.Query(arg.ID);
+            foreach(var c in results)
+            {
+                StudentInfo stu = StudentInfo.QueryFromID(c.StudentID);
+                stu.Remaining--;
+                int iResult = StudentInfo.Updata(stu);
+                if(iResult <= 0)
+                {
+                    string msg = string.Format("{0} 签到失败", stu.Name);
+                    XtraMessageBox.Show(msg,"消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue;
+                }
+            }
+            XtraMessageBox.Show("签到完成", "消息", MessageBoxButtons.OK);
+            Query();
         }
 
         private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)

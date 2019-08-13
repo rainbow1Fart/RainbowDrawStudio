@@ -73,29 +73,28 @@ namespace RainbowDrawStudio
         /// <param name="e"></param>
         private void password_textEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            if (string.IsNullOrEmpty(account_textEdit.Text.Trim()))
             {
-                if (string.IsNullOrEmpty(account_textEdit.Text.Trim()))
-                {
-                    XtraMessageBox.Show("请输入账号！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    account_textEdit.Focus();
-                    return;
-                }
+                XtraMessageBox.Show("请输入账号！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                account_textEdit.Focus();
+                return;
+            }
 
-                if (string.IsNullOrEmpty(password_textEdit.Text.Trim()))
-                {
-                    XtraMessageBox.Show("请输入密码！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    password_textEdit.Focus();
-                    return;
-                }
+            if (string.IsNullOrEmpty(password_textEdit.Text.Trim()))
+            {
+                XtraMessageBox.Show("请输入密码！", "消息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                password_textEdit.Focus();
+                return;
+            }
 
-                if (Login(account_textEdit.Text.Trim(), password_textEdit.Text.Trim()))
-                {
-                    MainForm.MainForm form = new MainForm.MainForm();
-                    Program.ApplicationContext.MainForm = form;
-                    this.Close();
-                    form.Show();
-                }
+            if (Login(account_textEdit.Text.Trim(), password_textEdit.Text.Trim()))
+            {
+                XmlCreate();
+
+                MainForm.MainForm form = new MainForm.MainForm();
+                Program.ApplicationContext.MainForm = form;
+                this.Close();
+                form.Show();
             }
         }
 

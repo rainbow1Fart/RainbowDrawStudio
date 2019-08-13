@@ -104,7 +104,7 @@ namespace RainbowDrawStudio.Public
                 return;
             }
 
-            int result = (_pageTotal % _pageSize) == 0 ? PageTotal / _pageSize : (PageTotal / _pageSize) + 1;
+            int result = (_pageTotal % _pageSize) == 0 ? PageTotal / _pageSize : (PageTotal / _pageSize);
             if (_pageIndex == result)
                 return;
             --_pageIndex;

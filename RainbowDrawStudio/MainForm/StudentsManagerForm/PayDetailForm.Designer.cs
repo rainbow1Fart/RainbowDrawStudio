@@ -254,6 +254,7 @@
             this.Controls.Add(this.close_simpleButton);
             this.Controls.Add(this.ok_simpleButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "PayDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

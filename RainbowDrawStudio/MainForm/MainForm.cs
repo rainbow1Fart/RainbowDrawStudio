@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using RDS_Model;
 using RainbowDrawStudio.MainForm.GroupClassForm;
+using RainbowDrawStudio.MainForm.CheckinRecordForm;
 
 namespace RainbowDrawStudio.MainForm
 {
@@ -138,6 +139,24 @@ namespace RainbowDrawStudio.MainForm
                 }
                 GroupClassUserControl form = new GroupClassUserControl();
                 form.Parent = checkin_navigationPage;
+                form.Dock = DockStyle.Fill;
+                form.Show();
+                return;
+            }
+            //签到历史
+            if (main_navigationPane.SelectedPage == checkinHistory_navigationPage)
+            {
+                foreach (Control child in checkinHistory_navigationPage.Controls)
+                {
+                    CheckinUserControl ctrl = child as CheckinUserControl;
+                    if (ctrl != null)
+                    {
+                        ctrl.Visible = true;
+                        return;
+                    }
+                }
+                CheckinUserControl form = new CheckinUserControl();
+                form.Parent = checkinHistory_navigationPage;
                 form.Dock = DockStyle.Fill;
                 form.Show();
                 return;

@@ -39,9 +39,10 @@
             this.student_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.restore_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.payRecord_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.checkin_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.checkinHistory_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.checkin_navigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.top_panelControl)).BeginInit();
             this.top_panelControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -98,6 +99,7 @@
             this.main_navigationPane.Controls.Add(this.restore_navigationPage);
             this.main_navigationPane.Controls.Add(this.payRecord_navigationPage);
             this.main_navigationPane.Controls.Add(this.checkin_navigationPage);
+            this.main_navigationPane.Controls.Add(this.checkinHistory_navigationPage);
             this.main_navigationPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_navigationPane.Location = new System.Drawing.Point(2, 2);
             this.main_navigationPane.Name = "main_navigationPane";
@@ -106,7 +108,8 @@
             this.student_navigationPage,
             this.restore_navigationPage,
             this.payRecord_navigationPage,
-            this.checkin_navigationPage});
+            this.checkin_navigationPage,
+            this.checkinHistory_navigationPage});
             this.main_navigationPane.RegularSize = new System.Drawing.Size(780, 462);
             this.main_navigationPane.SelectedPage = this.account_navigationPage;
             this.main_navigationPane.Size = new System.Drawing.Size(780, 462);
@@ -138,6 +141,18 @@
             this.payRecord_navigationPage.Name = "payRecord_navigationPage";
             this.payRecord_navigationPage.Size = new System.Drawing.Size(780, 462);
             // 
+            // checkin_navigationPage
+            // 
+            this.checkin_navigationPage.Caption = "班级&签到";
+            this.checkin_navigationPage.Name = "checkin_navigationPage";
+            this.checkin_navigationPage.Size = new System.Drawing.Size(780, 462);
+            // 
+            // checkinHistory_navigationPage
+            // 
+            this.checkinHistory_navigationPage.Caption = "签到历史";
+            this.checkinHistory_navigationPage.Name = "checkinHistory_navigationPage";
+            this.checkinHistory_navigationPage.Size = new System.Drawing.Size(686, 402);
+            // 
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
@@ -149,12 +164,6 @@
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
-            // checkin_navigationPage
-            // 
-            this.checkin_navigationPage.Caption = "班级&签到";
-            this.checkin_navigationPage.Name = "checkin_navigationPage";
-            this.checkin_navigationPage.Size = new System.Drawing.Size(686, 402);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -162,6 +171,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.top_panelControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "七彩画室";
@@ -192,5 +202,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage restore_navigationPage;
         private DevExpress.XtraBars.Navigation.NavigationPage payRecord_navigationPage;
         private DevExpress.XtraBars.Navigation.NavigationPage checkin_navigationPage;
+        private DevExpress.XtraBars.Navigation.NavigationPage checkinHistory_navigationPage;
     }
 }
