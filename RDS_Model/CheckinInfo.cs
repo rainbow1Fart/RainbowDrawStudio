@@ -5,9 +5,8 @@ using RDS_Controller;
 
 namespace RDS_Model
 {
-    public class CheckinInfo
+    public class CheckinInfo: CSbase
     {
-        public int ID { get; set; }
         public int GroupID { get; set; }
         public int StudentID { get; set; }
 

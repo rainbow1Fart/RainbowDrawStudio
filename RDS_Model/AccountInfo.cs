@@ -5,7 +5,7 @@ using System.Data.SQLite;
 
 namespace RDS_Model
 {
-    public class AccountInfo
+    public class AccountInfo : CSbase
     {
         public AccountInfo()
         {
@@ -32,8 +32,6 @@ namespace RDS_Model
         /// 全局用户信息
         /// </summary>
         private static List<AccountInfo> _accounts = new List<AccountInfo>();
-
-        public int ID { get; set; }
 
         /// <summary>
         /// 姓名

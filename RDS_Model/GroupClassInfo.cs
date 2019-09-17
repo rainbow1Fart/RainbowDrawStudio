@@ -5,9 +5,8 @@ using RDS_Controller;
 
 namespace RDS_Model
 {
-    public class GroupClassInfo
+    public class GroupClassInfo: CSbase
     {
-        public int ID { get; set; }
 
         /// <summary>
         /// 小组名称

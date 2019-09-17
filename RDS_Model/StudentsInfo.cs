@@ -5,7 +5,7 @@ using System.Data.SQLite;
 
 namespace RDS_Model
 {
-    public class StudentInfo
+    public class StudentInfo: CSbase
     {
         public StudentInfo()
         {
@@ -16,8 +16,6 @@ namespace RDS_Model
         {
 
         }
-
-        public int ID { get; set; }
 
         /// <summary>
         /// 学生编号
@@ -80,7 +78,6 @@ namespace RDS_Model
         public DateTime LastPayDate { get; set; }
 
         public bool Checkin { get; set; }
-
 
         public static List<StudentInfo> Looper(SQLiteDataReader reader)
         {

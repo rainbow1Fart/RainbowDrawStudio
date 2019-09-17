@@ -7,10 +7,8 @@ using System.Text;
 
 namespace RDS_Model
 {
-    public class CheckinRecordInfo
+    public class CheckinRecordInfo: CSbase
     {
-        public int ID { get; set; }
-
         public int OperationerID { get; set; }
 
         public string Operation { get; set; }

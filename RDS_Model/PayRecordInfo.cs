@@ -7,7 +7,7 @@ using RDS_Controller;
 
 namespace RDS_Model
 {
-    public class PayRecordInfo
+    public class PayRecordInfo: CSbase
     {
         public PayRecordInfo()
         {
@@ -18,8 +18,6 @@ namespace RDS_Model
         {
 
         }
-
-        public int ID { get; set; }
 
         /// <summary>
         /// 学生ID
